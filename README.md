@@ -17,7 +17,7 @@ You need git to clone the [musicme-frontend](https://github.com/SEBA-Team48/musi
 
 We also use a number of node.js tools to initialize and test [musicme-frontend](https://github.com/SEBA-Team48/musicme-frontend/) . You must have node.js and its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone Movie Project
+### Clone MusicMe Project
 
 Clone the [musicme-frontend](https://github.com/SEBA-Team48/musicme-frontend/)  repository using [git](http://git-scm.com/):
 
