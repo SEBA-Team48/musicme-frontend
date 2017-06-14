@@ -1,10 +1,11 @@
 <md-list>
 
-    <md-list-item aria-label="Lesson" ng-click="$ctrl.details(movie)" class="noright" ng-repeat="lesson in $ctrl.lessons">
+    <md-list-item aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="noright" ng-repeat="lesson in $ctrl.lessons">
         <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>
 
-        <p> {{lesson.name}} </p>
-
+        <p> {{lesson.title}} </p>
+        <!--<md-calendar ng-model="birthday"></md-calendar>
+-->
         <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
             <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
         </md-button>

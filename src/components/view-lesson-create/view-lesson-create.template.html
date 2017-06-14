@@ -1,17 +1,17 @@
 <div layout="column" layout-padding>
     <md-content class="md-no-momentum">
-        <h1> {{$ctrl.lesson.id}} </h1>
+        <h1> {{$ctrl.lesson.title}} </h1>
         <br/>
         <form name="lessonForm">
             <md-input-container class="md-icon-float md-block">
-                <label>ID</label>
-                <md-icon><ng-md-icon icon="id" ></ng-md-icon></md-icon>
+                <label>Title</label>
+                <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
                 <input ng-model="$ctrl.lesson.title" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-                <label>Name</label>
+                <label>Year</label>
                 <md-icon><ng-md-icon icon="date_range" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.lesson.name" type="text">
+                <input ng-model="$ctrl.lesson.year" type="text">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Rating</label>

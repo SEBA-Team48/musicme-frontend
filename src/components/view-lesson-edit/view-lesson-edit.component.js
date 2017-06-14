@@ -12,7 +12,7 @@ class ViewLessonEditComponent {
         this.controller = ViewLessonEditComponentController;
         this.template = template;
         this.bindings = {
-            lesson: '=',
+            lesson: '<',
         }
     }
 

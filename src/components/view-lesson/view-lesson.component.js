@@ -57,7 +57,7 @@ class ViewLessonComponentController{
     };
 
 
-   /** getPosterURL(){
+    getPosterURL(){
         let posterURL = 'http://placehold.it/32x32';
         if (this.lesson.hasOwnProperty('posters')) {
             if (this.lesson.posters.hasOwnProperty('thumbnail')) {
@@ -71,7 +71,7 @@ class ViewLessonComponentController{
             }
         }
         return posterURL;
-    }**/
+    }
 
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name];
