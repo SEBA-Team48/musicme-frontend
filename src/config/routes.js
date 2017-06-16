@@ -15,7 +15,7 @@ function resolveLesson($stateParams,lessonsService){
 }
 
 resolveLessons.$inject = [LessonsService.name];
-function resolveLesson(lessonsService){
+function resolveLessons(lessonsService){
     return lessonsService.list();
 }
 
