@@ -1,6 +1,4 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
+
 'use strict';
 
 import UserService from './../../services/user/user.service';
@@ -38,7 +36,7 @@ class ViewLoginComponentController{
 
         this.UserService.login(user,password).then(()=> {
             this.$state.go('lessons',{});
-    });
+        });
     }
 
     static get $inject(){

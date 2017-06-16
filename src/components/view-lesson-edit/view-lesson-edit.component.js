@@ -1,6 +1,4 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
+
 'use strict';
 
 import template from './view-lesson-edit.template.html';
@@ -29,7 +27,7 @@ class ViewLessonEditComponentController{
     }
 
     $onInit() {
-        //Clone the Lesson Data
+        //Clone the Music Data
         this.model = JSON.parse(JSON.stringify(this.lesson))
     }
 
@@ -41,7 +39,7 @@ class ViewLessonEditComponentController{
     save() {
         let _id = this.lesson['_id'];
 
-        this.LessonService.update(this.model).then(data => {
+        this.LessonsService.update(this.model).then(data => {
             this.lesson = JSON.parse(JSON.stringify(data));
 
             this.$state.go('lesson',{ lessonId:_id});

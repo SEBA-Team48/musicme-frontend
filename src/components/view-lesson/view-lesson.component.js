@@ -1,6 +1,4 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
+
 'use strict';
 
 import template from './view-lesson.template.html';
@@ -25,9 +23,9 @@ class ViewLessonComponent {
 }
 
 class ViewLessonComponentController{
-    constructor($state,LessonsService,UserService){
+    constructor($state,LessonService,UserService){
         this.$state = $state;
-        this.LessonsService = LessonsService;
+        this.LessonService = LessonService;
         this.UserService = UserService;
 
     }

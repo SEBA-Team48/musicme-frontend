@@ -1,6 +1,3 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
 'use strict';
 
 import LessonsComponent from './../components/view-lessons/view-lessons.component';
@@ -18,7 +15,7 @@ function resolveLesson($stateParams,lessonsService){
 }
 
 resolveLessons.$inject = [LessonsService.name];
-function resolveLessons(lessonsService){
+function resolveLesson(lessonsService){
     return lessonsService.list();
 }
 
@@ -45,7 +42,7 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/lessons/:lessonId',
             component: LessonComponent.name,
             resolve: {
-                lesson : resolveLesson()
+                lesson : resolveLesson
             }
 
         })
@@ -53,7 +50,7 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/lessons/:lessonId/edit',
             component: LessonEditComponent.name,
             resolve: {
-                lesson : resolveLesson()
+                lesson : resolveLesson
             }
         })
         .state('login', {
@@ -63,3 +60,4 @@ export default function config ($stateProvider, $urlRouterProvider){
 
 
 }
+

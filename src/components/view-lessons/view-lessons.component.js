@@ -1,6 +1,4 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
+
 'use strict';
 
 import template from './view-lessons.template.html';
@@ -63,8 +61,8 @@ class ViewLessonsComponentController{
             let _id = lesson['_id'];
 
             this.LessonsService.delete(_id).then(response => {
-                let index = this.lesson.map(x => x['_id']).indexOf(_id);
-                this.lesson.splice(index, 1);
+                let index = this.lessons.map(x => x['_id']).indexOf(_id);
+                this.lessons.splice(index, 1);
             })
 
         } else {
@@ -80,5 +78,3 @@ class ViewLessonsComponentController{
 }
 
 export default ViewLessonsComponent;
-
-

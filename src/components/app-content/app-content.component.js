@@ -1,6 +1,4 @@
-/**
- * Created by peresthahadji on 10.06.17.
- */
+
 'use strict';
 
 import template from './app-content.template.html';
