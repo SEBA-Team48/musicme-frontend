@@ -52,7 +52,7 @@ class AppHeaderComponentController{
 
     logout(){
         this.UserService.logout();
-        this.$state.go('lessons',{});
+        this.$state.go('login',{});
     }
 
     static get $inject(){
