@@ -1,3 +1,17 @@
+<md-sidenav md-selected-nav-item="currentNavItem" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+    <md-list>
+        <md-list-item ng-click="$ctrl.redirectEditProfile()">Edit Profile </md-list-item>
+        <md-list-item ng-click="$ctrl.redirectYourInbox()">Your inbox</md-list-item>
+        <md-list-item ng-click="$ctrl.redirectYourAppointmentPage()"> Appointment Page</md-list-item>
+        <md-list-item ng-click="$ctrl.redirectSearchATeacher()"> Search a Teacher</md-list-item>
+        <md-list-item ng-click="$ctrl.redirectRateATeacher()"> Rate a Teacher </md-list-item>
+        <md-list-item ng-click="$ctrl.redirectCancelALesson()"> Cancel a Lesson </md-list-item>
+        <md-list-item ng-click="$ctrl.newLesson()"> Add New Time Slot</md-list-item>
+    </md-list>
+    <md-content>
+
+    </md-content>
+</md-sidenav>
 
 <md-content class="md-no-momentum">
     <h1> Add new lesson </h1>
@@ -6,25 +20,11 @@
     <br>
     <form name="lessonForm">
         <div layout="row">
-
-
-    <md-sidenav md-selected-nav-item="currentNavItem" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
-        <md-list>
-            <md-list-item ng-click="$ctrl.redirectEditProfile()">Edit Profile </md-list-item>
-            <md-list-item ng-click="$ctrl.redirectYourInbox()">Your inbox</md-list-item>
-            <md-list-item ng-click="$ctrl.redirectYourAppointmentPage()"> Appointment Page</md-list-item>
-            <md-list-item ng-click="$ctrl.redirectSearchATeacher()"> Search a Teacher</md-list-item>
-            <md-list-item ng-click="$ctrl.redirectRateATeacher()"> Rate a Teacher </md-list-item>
-            <md-list-item ng-click="$ctrl.redirectCancelALesson()"> Cancel a Lesson </md-list-item>
-            <md-list-item ng-click="$ctrl.newLesson()"> Add New Time Slot</md-list-item>
-        </md-list>
-        <md-content>
-
-        </md-content>
-    </md-sidenav>
-
-
-
+            <md-input-container class="md-icon-float md-block">
+                <label>Title</label>
+                <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.lesson.title" type="text" required>
+            </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Instrument(s)</label>
                 <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
