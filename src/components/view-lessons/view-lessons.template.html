@@ -19,10 +19,9 @@
             <form name="lessonForm">
             <md-list>
         <md-list-item aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="noright" ng-repeat="lesson in $ctrl.lessons">
-            <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>
+<!--            <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>-->
 
             <p> {{lesson.title}} , {{lesson.year}}</p>
-
 
 
             <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
@@ -37,9 +36,14 @@
         <md-divider></md-divider>
 
     </md-list>
-    <!--<md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Lesson" ng-click="$ctrl.newLesson()">
-        <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
-    </md-button>-->
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                    <md-button class="md-raised" type="submit" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
+                    <md-button ng-mouseover="textContent">
+                        <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
+                    </md-button>
+                </div>
                 </form>
 </div>
 </div>
