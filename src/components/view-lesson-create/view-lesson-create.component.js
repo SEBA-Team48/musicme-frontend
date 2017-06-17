@@ -35,7 +35,8 @@ class ViewLessonCreateComponentController{
         this.lesson['user'] = user['_id'];
         this.LessonsService.create(this.lesson).then(data => {
             let _id = data['_id'];
-            this.$state.go('lesson',{ lessonId:_id});
+            //this.$state.go('lesson',{ lessonId:_id});
+            this.$state.go('lessons',{})
         });
 
     };
