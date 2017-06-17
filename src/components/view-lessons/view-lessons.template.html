@@ -1,39 +1,28 @@
+<div class="container" layout="row" layout-align="start" flex>
+    <md-sidenav md-selected-nav-item="currentNavItem" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+        <md-list>
+            <md-list-item ng-click="$ctrl.redirectEditProfile()">Edit Profile </md-list-item>
+            <md-list-item ng-click="$ctrl.redirectYourInbox()">Your inbox</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectYourAppointmentPage()"> Appointment Page</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectSearchATeacher()"> Search a Teacher</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectRateATeacher()"> Rate a Teacher </md-list-item>
+            <md-list-item ng-click="$ctrl.redirectCancelALesson()"> Cancel a Lesson </md-list-item>
+            <md-list-item ng-click="$ctrl.newLesson()"> Add New Time Slot</md-list-item>
+        </md-list>
+        <md-content>
 
+        </md-content>
+    </md-sidenav>
 
-<!--<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-    <!--<md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-left">
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Edit Profile</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Your Inbox</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Appointment Page</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Search a Teacher</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Rate a Teacher</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Cancel a Lesson</a>
-        <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Add New Time Slot</a>
-
-       <!-- </md-sidenav>
-    </div>-->
-
-
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Edit Profile</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Your Inbox</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Appointment Page</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Search a Teacher</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Rate a Teacher</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Cancel a Lesson</a>
-    <a href="#" class="w3-bar-item w3-button w3-border-bottom w3-hover-green">Add New Time Slot</a>
-
-</div>-->
-</div>
-    <md-list>
+    <div layout="column" layout-padding>
+        <md-content class="md-no-momentum">
+            <form name="lessonForm">
+            <md-list>
         <md-list-item aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="noright" ng-repeat="lesson in $ctrl.lessons">
-            <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>
+<!--            <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>-->
 
-            <p> {{lesson.title}} </p>
+            <p> {{lesson.title}} , {{lesson.year}}</p>
+
 
             <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
                 <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
@@ -47,6 +36,14 @@
         <md-divider></md-divider>
 
     </md-list>
-    <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Lesson" ng-click="$ctrl.newLesson()">
-        <md-icon><ng-md-icon icon="add"></ng-md-icon></md-icon>
-    </md-button>
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                    <md-button class="md-raised" type="submit" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
+                    <md-button ng-mouseover="textContent">
+                        <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
+                    </md-button>
+                </div>
+                </form>
+</div>
+</div>
