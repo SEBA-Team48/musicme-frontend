@@ -41,6 +41,7 @@ class ViewRegistrationComponentController {
         });
     }
 
+
     static get $inject(){
         return ['$state', UserService.name];
     }

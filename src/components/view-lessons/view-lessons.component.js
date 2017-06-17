@@ -53,7 +53,68 @@ class ViewLessonsComponentController{
 
     }
 
+    redirectEditProfile(){
 
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectYourInbox(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectYourAppointmentPage(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectSearchATeacher(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectRateATeacher(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectCancelALesson(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectAddNewTimeSlot(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('lessons',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
 
 
     delete(lesson) {
