@@ -61,7 +61,7 @@ export default function config ($stateProvider, $urlRouterProvider){
 
         .state('register',{
             url: '/register',
-            component:RegistrationComponent.name,
+            component: RegistrationComponent.name,
         })
 
 }
