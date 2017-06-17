@@ -17,5 +17,4 @@ class AppSidebarComponent {
         return 'appSidebar';
     }
 
-
 }

@@ -18,8 +18,6 @@ class ViewLessonsComponent {
     static get name() {
         return 'viewLessons';
     }
-
-
 }
 
 class ViewLessonsComponentController{
@@ -56,6 +54,8 @@ class ViewLessonsComponentController{
     }
 
 
+
+
     delete(lesson) {
         if (this.UserService.isAuthenticated()) {
             let _id = lesson['_id'];
@@ -74,6 +74,8 @@ class ViewLessonsComponentController{
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name];
     }
+
+
 
 }
 
