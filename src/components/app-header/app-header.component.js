@@ -55,6 +55,10 @@ class AppHeaderComponentController{
         this.$state.go('login',{});
     }
 
+    register(){
+        this.$state.go('register',{});
+    }
+
     static get $inject(){
         return ['$state', UserService.name];
     }
