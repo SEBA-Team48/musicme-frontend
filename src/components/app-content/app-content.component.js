@@ -1,12 +1,13 @@
-
 'use strict';
 
 import template from './app-content.template.html';
+import UserService from './../../services/user/user.service';
 
 class AppContentComponent {
-    constructor(){
+    constructor() {
         this.controller = AppContentComponentController;
         this.template = template;
+
 
     }
 
@@ -17,11 +18,20 @@ class AppContentComponent {
 
 }
 
-class AppContentComponentController{
-    constructor(){
+class AppContentComponentController {
+    constructor($state,UserService) {
+        this.$state = $state;
+        this.UserService = UserService;
 
     }
 
+    isAuthenticated(){
+        return this.UserService.isAuthenticated();
+    }
+
+    static get $inject(){
+        return ['$state', UserService.name];
+    }
 }
 
 

@@ -25,50 +25,34 @@ class AppSidebarComponent {
         this.UserService = UserService;
 
     }
-    redirectCancelLesson(){
-
-        if(this.UserService.isAuthenticated()) {
-            this.$state.go('login',{})
-        } else {
-            this.$state.go('login',{});
+        redirectEditProfile(){
+             this.$state.go('lessons',{})
         }
-    }
 
-    redirectEditProfile(){
-
-        if(this.UserService.isAuthenticated()) {
+        redirectYourInbox(){
             this.$state.go('login',{})
-        } else {
-            this.$state.go('login',{});
         }
-    }
 
-    redirectEditProfile(){
-
-        if(this.UserService.isAuthenticated()) {
-            this.$state.go('login',{})
-        } else {
-            this.$state.go('login',{});
+        redirectYourAppointmentPage(){
+             this.$state.go('login',{})
         }
-    }
 
-    redirectEditProfile(){
-
-        if(this.UserService.isAuthenticated()) {
-            this.$state.go('login',{})
-        } else {
-            this.$state.go('login',{});
+        redirectSearchATeacher(){
+             this.$state.go('login',{})
         }
-    }
 
-    redirectEditProfile(){
-
-        if(this.UserService.isAuthenticated()) {
-            this.$state.go('login',{})
-        } else {
-            this.$state.go('login',{});
+        redirectRateATeacher(){
+             this.$state.go('login',{})
         }
-    }
+
+        redirectCancelALesson(){
+             this.$state.go('login',{})
+        }
+
+        redirectAddNewTimeSlot(){
+            this.$state.go('lessonAdd',{})
+        }
+
 
         static get $inject(){
             return ['$state', UserService.name];

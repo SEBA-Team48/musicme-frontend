@@ -1,9 +1,8 @@
 
 'use strict';
 
-import UserService from './../../services/user/user.service';
-
 import template from './app-header.template.html';
+import UserService from './../../services/user/user.service';
 
 import './app-header.style.css';
 
