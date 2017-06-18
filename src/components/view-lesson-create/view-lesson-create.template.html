@@ -1,6 +1,6 @@
 
-<div class="container" layout="row" layout-align="start" flex>
 
+<div class="container" layout="row" layout-align="start" flex>
     <md-sidenav md-selected-nav-item="currentNavItem" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" flex="20" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
 
         <md-list>
@@ -25,8 +25,11 @@
     <form name="lessonForm">
         <div layout="row">
 
-
-
+            <md-input-container class="md-icon-float md-block">
+                <label>Session Name</label>
+                <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
+                <input ng-model="$ctrl.lesson.title" type="text" required>
+            </md-input-container>
 
             <md-input-container class="md-icon-float md-block">
                 <label>Instrument(s)</label>
@@ -42,9 +45,9 @@
                     <md-option value="saxophone">Saxophone</md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <label>Date</label>
-                <md-datepicker ng-model="$ctrl.lesson.start_day" required></md-datepicker>
+            <md-input-container md-datepicker ng-model="$ctrl.lesson.start_day" required class="md-icon-float md-block">
+               <!-- <label>Date</label>
+                <md-datepicker ng-model="$ctrl.lesson.start_day" required></md-datepicker>-->
             </md-input-container>
         </div>
         <div layout="row">
