@@ -55,7 +55,10 @@
             <div layout="row">
                 <span flex></span>
                 <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-                <md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button>
+                <md-button ng-disabled="!lessonForm.$valid" ng-click="$ctrl.save()" class="md-raised md-primary">Save 
+                    time slot
+                </md-button>
+                <!--<md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button> -->
                 <!--<md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>-->
                 <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
                     <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
