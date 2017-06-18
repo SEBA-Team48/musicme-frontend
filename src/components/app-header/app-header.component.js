@@ -52,7 +52,7 @@ class AppHeaderComponentController{
 
     logout(){
         this.UserService.logout();
-        this.$state.go('login',{});
+        this.$state.go('landingPage',{});
     }
 
     register(){
