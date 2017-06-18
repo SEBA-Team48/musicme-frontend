@@ -14,6 +14,15 @@ export default angular.module('ViewLessons', [])
 
 
 
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    {
+        $scope.day = "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+    }
+});
+
+
+
 
 // function to set the default data
 /*$scope.reset = function() {
