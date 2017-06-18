@@ -16,42 +16,86 @@
 
 
 
-    <div layout="column" layout-padding>
-        <md-content class="md-no-momentum">
-            <h1> Your list of time slots</h1>
-            <h3>Please click 'Add new time slot' to create a new music session!</h3>
-            <br>
-            <form name="lessonForm">
-            <md-list>
-        <md-list-item aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="noright" ng-repeat="lesson in $ctrl.lessons">
-<!--            <md-icon><ng-md-icon icon="insert_drive_file"></ng-md-icon></md-icon>-->
-
-            <p> {{lesson.title}} , {{lesson.year}}</p>
 
 
-            <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
-                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+    <div ng-cloak>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+               <!-- <md-tab label="List of time slots">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">List of time slots</h1>
+                        <div layout="column" layout-padding>
+                            <md-content class="md-no-momentum">
+                                <h3>Please click 'Add new time slot' to create a new music session!</h3>
+                                <br>
+                                <form name="lessonForm">
+                                    <md-list>
+                                        <md-list-item aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="noright" ng-repeat="lesson in $ctrl.lessons">
+
+
+                                            <p> {{lesson.title}} , {{lesson.year}}</p>
+
+
+                                            <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
+                                                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+                                            </md-button>
+
+                                            <md-button class="md-icon-button"aria-label="Delete Item" ng-click="$ctrl.delete(lesson)" >
+                                                <md-icon><ng-md-icon icon="delete" ></ng-md-icon></md-icon>
+                                            </md-button>
+                                            <md-divider ng-if="!$last"></md-divider>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+
+                                    </md-list>
+                                </form>
+                            </md-content>
+
+                        </div>
+                </md-tab>-->
+                <md-tab label="Weekly">
+                    <md-content class="md-padding">
+                        <h3>Please click 'Add new time slot' or a specific time slot to create a new music session!</h3>
+                        <h1 class="md-display-2">Weekly</h1>
+                       <!-- <md-calendar ng-model="week"></md-calendar>          -->
+                    </md-content>
+                </md-tab>
+                <!--<md-tab label="Monthly">
+                    <md-content class="md-padding">
+                        <h3>Please click 'Add new time slot' or a specific time slot to create a new music session!</h3>
+                        <h1 class="md-display-2">Monthly</h1>
+                        <p><md-calendar ng-model="month"></md-calendar></p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Yearly">
+                    <md-content class="md-padding">
+                        <h3>Please click 'Add new time slot' or a specific time slot to create a new music session!</h3>
+                        <h1 class="md-display-2">Yearly</h1>
+                        <p><md-calendar ng-model="year"></md-calendar></p>
+                    </md-content>
+                </md-tab>-->
+
+            </md-tabs>
+        </md-content>
+
+
+
+
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+            <md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
+            <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
             </md-button>
+            <div class="tooltip" ng-show="tooltip" md-direction="bottom">On this page, you can create a new lesson and see the list of your lessons.
+            </div>
+        </div>
 
-            <md-button class="md-icon-button"aria-label="Delete Item" ng-click="$ctrl.delete(lesson)" >
-                <md-icon><ng-md-icon icon="delete" ></ng-md-icon></md-icon>
-            </md-button>
-            <md-divider ng-if="!$last"></md-divider>
-        </md-list-item>
-        <md-divider></md-divider>
-
-    </md-list>
-                <div layout="row">
-                    <span flex></span>
-                    <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-                    <md-button class="md-raised" type="submit" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
-                    <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
-                        <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
-                    </md-button>
-                    <div class="tooltip" ng-show="tooltip" md-direction="bottom">On this page, you can create a new lesson and see the list of your lessons.
-                </div>
-                    </div>
-                </form>
     </div>
-</div>
-</div>
+
+
+
+
+
+
