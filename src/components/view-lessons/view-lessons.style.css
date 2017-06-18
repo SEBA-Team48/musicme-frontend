@@ -21,3 +21,17 @@
 
 
 
+.table{
+    border: 2px solid #999;
+    display: table;
+    border-spacing: 15px;
+}
+.tableRow{
+    display: table-row;
+}
+.tableCell{
+    border: 3px solid #333;
+    border-collapse: separate;
+    display: table-cell;
+    border-collapse: separate;
+}
