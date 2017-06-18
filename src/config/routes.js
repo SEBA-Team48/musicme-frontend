@@ -5,11 +5,9 @@ import LessonComponent from './../components/view-lesson/view-lesson.component';
 import LessonEditComponent from './../components/view-lesson-edit/view-lesson-edit.component';
 import LessonCreateComponent from './../components/view-lesson-create/view-lesson-create.component';
 import LoginComponent from './../components/view-login/view-login.component';
-<<<<<<< HEAD
 import LandingPageComponent from './../components/view-landing-page/view-landing-page.component';
-=======
 import RegistrationComponent from './../components/view-registration/view-registration.component'
->>>>>>> 354db94fa0cad929f2a9670ed11a1f4c7b812776
+
 
 import LessonsService from './../services/lessons/lessons.service';
 
