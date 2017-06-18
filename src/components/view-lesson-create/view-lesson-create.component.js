@@ -35,11 +35,83 @@ class ViewLessonCreateComponentController{
         this.lesson['user'] = user['_id'];
         this.LessonsService.create(this.lesson).then(data => {
             let _id = data['_id'];
-            this.$state.go('lesson',{ lessonId:_id});
+            //this.$state.go('lesson',{ lessonId:_id});
+            this.$state.go('lessons',{})
         });
 
     };
 
+    redirectEditProfile(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectYourInbox(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectYourAppointmentPage(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectSearchATeacher(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectRateATeacher(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectCancelALesson(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectAddNewTimeSlot(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('lessons',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    help(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('lessons',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
 
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name];

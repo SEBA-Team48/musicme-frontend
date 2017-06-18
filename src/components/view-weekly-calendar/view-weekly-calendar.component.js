@@ -1,59 +1,57 @@
 
-'use strict';
+/*'use strict';
 
-import template from './view-lesson-edit.template.html';
-
+import template from './view-weekly-calendar.template.html';
 import LessonsService from './../../services/lessons/lessons.service';
+import UserService from './../../services/user/user.service';
 
-class ViewLessonEditComponent {
+
+class ViewWeeklyCalendarComponent {
     constructor(){
-        this.controller = ViewLessonEditComponentController;
+        this.controller = ViewWeeklyCalendarComponentController;
         this.template = template;
         this.bindings = {
-            lesson: '<',
+            lessons: '<',
         }
     }
 
     static get name() {
-        return 'viewLessonEdit';
+        return 'viewLessons';
     }
 }
 
-class ViewLessonEditComponentController{
-    constructor($state, LessonsService){
-        this.model = {};
+class ViewWeeklyCalendarComponentController{
+    constructor($state,LessonsService,UserService){
         this.$state = $state;
         this.LessonsService = LessonsService;
+        this.UserService = UserService;
+
     }
 
-    $onInit() {
-        //Clone the Music Data
-        this.model = JSON.parse(JSON.stringify(this.lesson))
+    details (lesson) {
+        let _id = lesson['_id'];
+        this.$state.go('lesson',{ lessonId:_id});
+    };
+
+    edit (lesson) {
+
+        if (this.UserService.isAuthenticated()) {
+            let _id = lesson['_id'];
+            this.$state.go('lessonEdit',{ lessonId:_id});
+        } else {
+            this.$state.go('login',{});
+        }
+    };
+
+    newLesson(){
+
+        if (this.UserService.isAuthenticated()) {
+            this.$state.go('lessonAdd',{});
+        } else {
+            this.$state.go('login',{});
+        }
+
     }
-
-    cancel() {
-        this.model = JSON.parse(JSON.stringify(this.lesson));
-        this.$state.go('lessons',{});
-    };
-
-    save() {
-        let _id = this.lesson['_id'];
-
-        this.LessonsService.update(this.model).then(data => {
-            this.lesson = JSON.parse(JSON.stringify(data));
-
-            this.$state.go('lesson',{ lessonId:_id});
-        });
-
-    };
-
-    delete() {
-        let _id = this.lesson['_id'];
-
-        this.LessonsService.delete(_id).then(response => {
-            this.$state.go('lessons',{});
-        });
-    };
 
     redirectEditProfile(){
 
@@ -118,11 +116,28 @@ class ViewLessonEditComponentController{
         }
     }
 
+
+    delete(lesson) {
+        if (this.UserService.isAuthenticated()) {
+            let _id = lesson['_id'];
+
+            this.LessonsService.delete(_id).then(response => {
+                let index = this.lessons.map(x => x['_id']).indexOf(_id);
+                this.lessons.splice(index, 1);
+            })
+
+        } else {
+            this.$state.go('login',{});
+        }
+    };
+
+
     static get $inject(){
-        return ['$state', LessonsService.name];
+        return ['$state', LessonsService.name, UserService.name];
     }
+
+
 
 }
 
-
-export default ViewLessonEditComponent;
+export default ViewWeeklyCalendarComponent;*/

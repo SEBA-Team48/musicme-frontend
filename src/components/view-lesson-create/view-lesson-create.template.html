@@ -1,34 +1,93 @@
-<div layout="column" layout-padding>
-    <md-content class="md-no-momentum">
-        <h1> {{$ctrl.lesson.title}} </h1>
-        <br/>
-        <form name="lessonForm">
+
+
+<div class="container" layout="row" layout-align="start" flex>
+    <md-sidenav md-selected-nav-item="currentNavItem" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" flex="20" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+
+        <md-list>
+            <md-list-item ng-click="$ctrl.redirectEditProfile()">Edit Profile </md-list-item>
+            <md-list-item ng-click="$ctrl.redirectYourAppointmentPage()"> Appointment Page</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectYourInbox()">Your message inbox</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectSearchATeacher()"> Search a teacher</md-list-item>
+            <md-list-item ng-click="$ctrl.redirectRateATeacher()"> Rate a teacher </md-list-item>
+            <md-list-item ng-click="$ctrl.redirectCancelALesson()"> Cancel a lesson </md-list-item>
+            <md-list-item ng-click="$ctrl.newLesson()"> Add a new time slot</md-list-item>
+        </md-list>
+        <md-content>
+
+        </md-content>
+    </md-sidenav>
+
+
+<md-content class="md-no-momentum">
+    <h1> Add new lesson </h1>
+    <h3>    Please enter the necessary information about your session
+        </h3>
+    <form name="lessonForm">
+        <div layout="row">
+
             <md-input-container class="md-icon-float md-block">
-                <label>Title</label>
+                <label>Session Name</label>
                 <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.lesson.title" type="text">
+                <input ng-model="$ctrl.lesson.title" type="text" required>
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Instrument(s)</label>
+                <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
+                    <md-option value="piano">Piano</md-option>
+                    <md-option value="guitar">Guitar</md-option>
+                    <md-option value="violin">Violin</md-option>
+                    <md-option value="recorder">Redcorder</md-option>
+                    <md-option value="drums">Drums</md-option>
+                    <md-option value="transverse_flute">Transverse flute</md-option>
+                    <md-option value="clarinet">Clarinet</md-option>
+                    <md-option value="trumpet">Trumpet</md-option>
+                    <md-option value="saxophone">Saxophone</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container md-datepicker ng-model="$ctrl.lesson.start_day" required class="md-icon-float md-block">
+               <!-- <label>Date</label>
+                <md-datepicker ng-model="$ctrl.lesson.start_day" required></md-datepicker>-->
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-icon-float md-block">
+                <label>Start time</label>
+                <input ng-model="$ctrl.lesson.start_time" type="time" required class="form-control"
+                       placeholder="08:00">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-                <label>Year</label>
-                <md-icon><ng-md-icon icon="date_range" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.lesson.year" type="text">
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <label>MPAA Rating</label>
-                <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.lesson.mpaa_rating" type="text">
+                <label>End time</label>
+                <input ng-model="$ctrl.lesson.end_time" type="time" required class="form-control"
+                       placeholder="10:00">
             </md-input-container>
             <md-input-container class="md-block">
-                <label>Synopsis</label>
-                <textarea ng-model="$ctrl.lesson.synopsis" md-maxlength="1000" rows="8" md-select-on-focus></textarea>
+                <label>Session frequency</label>
+                <md-select name="type" ng-model="$ctrl.lesson.frequency" required>
+                    <md-option value="onetime">one time</md-option>
+                    <md-option value="weekly">weekly</md-option>
+                    <md-option value="biweekly">bi weekly</md-option>
+                </md-select>
             </md-input-container>
-            <div layout="row">
-                <span flex></span>
-                <md-button class="md-raised md-primary" type="submit" ng-click="$ctrl.save()">Save</md-button>
-                <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-            </div>
 
-        </form>
-    </md-content>
+        </div>
+        <div>
+            <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+            <md-button ng-disabled="!lessonForm.$valid" ng-click="$ctrl.save()" class="md-raised md-primary">Add new
+                time slot
+            </md-button>
+            <md-button ng-click="$ctrl.help()">
+                <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
+            </md-button>
+        </div>
+    </form>
+</md-content>
 
-</div>
+
+
+
+
+
+
+
+

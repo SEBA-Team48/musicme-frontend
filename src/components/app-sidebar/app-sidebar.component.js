@@ -2,12 +2,12 @@
 
 import UserService from './../../services/user/user.service';
 
-import template from './app-header.template.html';
+import template from './app-sidebar.template.html';
 
-import './app-header.style.css';
+import './app-sidebar.style.css';
 
 class AppSidebarComponent {
-    constructor(){
+    constructor() {
         this.controller = AppSidebarComponentController;
         this.template = template;
 
@@ -17,5 +17,62 @@ class AppSidebarComponent {
         return 'appSidebar';
     }
 
-
 }
+
+    class AppSidebarComponentController{
+    constructor($state,UserService){
+        this.$state = $state;
+        this.UserService = UserService;
+
+    }
+    redirectCancelLesson(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectEditProfile(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectEditProfile(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectEditProfile(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+    redirectEditProfile(){
+
+        if(this.UserService.isAuthenticated()) {
+            this.$state.go('login',{})
+        } else {
+            this.$state.go('login',{});
+        }
+    }
+
+        static get $inject(){
+            return ['$state', UserService.name];
+        }
+}
+
+export default AppSidebarComponent;
