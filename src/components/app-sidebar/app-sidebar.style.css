@@ -1,11 +1,13 @@
 
-md-list{
-   //color: #00FFFF;
+sidebar{
+   /*color: #00FFFF; */
     height: 88vh;
 }
 
-md-list-item{
+
+md-list-item.sidebar-item{
     min-height: 20px;
-    height: 12.5vh; /*~88/7 -height md-list/number of sidebar items */
+    height: 12vh; /* ~~88/7 -height md-list/number of sidebar items */
+    /* color: #00FFFF; */
     /* font-size: todo */
-} 
+}
