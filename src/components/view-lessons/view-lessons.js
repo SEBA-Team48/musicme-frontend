@@ -13,16 +13,16 @@ export default angular.module('ViewLessons', [])
     .component(ViewLessonsComponent.name, new ViewLessonsComponent);
 
 
-
+/*
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     {
-        $scope.day = "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+        $scope.days = "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     }
 });
 
 
-
+*/
 
 // function to set the default data
 /*$scope.reset = function() {
