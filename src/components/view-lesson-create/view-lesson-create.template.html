@@ -2,17 +2,17 @@
 
 <div class="container" layout="row" layout-align="start" flex>
 
-    <div layout="column" layout-padding>
-    <md-content class="md-no-momentum">
+    <div ng-cloak>
+    <md-content>
         <h1> {{$ctrl.lesson.title}} </h1>
         <br/>
         <form name="lessonForm">
             <md-input-container class="md-icon-float md-block">
                 <label>Title</label>
                 <md-icon><ng-md-icon icon="title" ></ng-md-icon></md-icon>
-                <input ng-model="$ctrl.lesson.title" type="text">
+                <input ng-model="$ctrl.lesson.title" type="text" required>
             </md-input-container>
-            <div class="row">
+            <div >
                 <md-input-container class="md-icon-float md-block">
                     <label>Instrument(s)</label>
                     <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
@@ -27,6 +27,8 @@
                         <md-option value="saxophone">Saxophone</md-option>
                     </md-select>
                 </md-input-container>
+            </div>
+            <div>
                 <md-input-container md-datepicker ng-model="$ctrl.lesson.start_day" required class="md-icon-float md-block">
                     <label>Date</label>
                     <md-datepicker ng-model="$ctrl.lesson.start_day" required
@@ -68,6 +70,6 @@
             </div>
         </form>
     </md-content>
-</div>
+    </div>
 </div>
 
