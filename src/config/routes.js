@@ -5,6 +5,7 @@ import LessonComponent from './../components/view-lesson/view-lesson.component';
 import LessonEditComponent from './../components/view-lesson-edit/view-lesson-edit.component';
 import LessonCreateComponent from './../components/view-lesson-create/view-lesson-create.component';
 import LoginComponent from './../components/view-login/view-login.component';
+import LandingPageComponent from './../components/view-landing-page/view-landing-page.component';
 
 import LessonsService from './../services/lessons/lessons.service';
 
@@ -51,6 +52,13 @@ export default function config ($stateProvider, $urlRouterProvider){
             component: LessonEditComponent.name,
             resolve: {
                 lesson : resolveLesson
+            }
+        })
+        .state('landingPage', {
+            url: '/landing',
+            component: LandingPageComponent.name,
+            resolve: {
+                lessons : resolveLessons
             }
         })
         .state('login', {

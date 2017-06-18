@@ -1,0 +1,42 @@
+<md-content layout-padding>
+
+    <div class='md-padding' layout="row" layout-wrap layout-align="center center">
+        <md-card flex="100">
+            <img ng-src={{$ctrl.getSearchBannerURL()}} class="md-card-image" alt="Banner Image">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Search for a lesson</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-input-container class="md-icon-float md-block">
+                    <label>Lesson</label>
+                    <md-icon><ng-md-icon icon="search"></ng-md-icon></md-icon>
+                    <input ng-model="searchBox" type="text">
+                </md-input-container>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div class='md-padding' layout="row" layout-wrap layout-align="center start">
+        <md-card flex="30" ng-repeat="lesson in $ctrl.lessons | filter:searchBox">
+            <img ng-src="{{$ctrl.getLessonDisplayImageURL()}}" class="md-card-image" alt="Lesson Image">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{lesson.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>{{lesson.year}}</p>
+                <p>{{lesson.synopsis}}</p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button aria-label="Contact Lesson" ng-click="$ctrl.contact(lesson)">Contact</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+
+</md-content>
+
+
