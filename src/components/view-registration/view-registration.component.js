@@ -4,7 +4,6 @@
 import UserService from './../../services/user/user.service';
 
 import template from './view-registration.template.html';
-import './view-registration.style.css';
 
 class ViewRegistrationComponent {
     constructor(){
