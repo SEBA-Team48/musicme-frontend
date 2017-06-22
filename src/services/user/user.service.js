@@ -48,6 +48,7 @@ export default class UserService {
         return JSON.parse(this.$window.atob(base64)).user;
     }
 
+
     isAuthenticated() {
         return !!this.$window.localStorage['jwtToken'];
     }

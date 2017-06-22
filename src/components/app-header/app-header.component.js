@@ -40,7 +40,6 @@ class AppHeaderComponentController{
         return user.username;
     }
 
-
     goHome(){
         this.$state.go('lessons',{});
     }
