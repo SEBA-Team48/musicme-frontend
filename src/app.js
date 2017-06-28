@@ -7,7 +7,7 @@ import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 
 import ngMdIcons from 'angular-material-icons';
-
+import weeklyScheduler from 'angular-weekly-scheduler';
 import LessonsService from './services/lessons/lessons';
 import UserService from './services/user/user';
 
@@ -25,6 +25,7 @@ import ViewLandingPage from './components/view-landing-page/view-landing-page';
 let app = angular.module('app', [
     uiRouter,
     angularMaterial,
+    weeklyScheduler,
     ngMdIcons,
     UserService.name,
     LessonsService.name,

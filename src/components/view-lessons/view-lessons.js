@@ -9,7 +9,7 @@ import ViewLessonsComponent from './view-lessons.component';
 angular.module('tabsDemoDynamicHeight', ['ngMaterial']);
 
 
-export default angular.module('ViewLessons', [])
+export default angular.module('ViewLessons', ['weeklyScheduler'])
     .component(ViewLessonsComponent.name, new ViewLessonsComponent);
 
 
@@ -40,7 +40,7 @@ app.controller('myCtrl', function($scope) {
                     booked: false
                 }
             }
-        },
+        }   npmnpnp,
         tuesday: {
             name: 'Tuesday',
             slots: {
