@@ -1,13 +1,35 @@
+md-sidenav{
+    width: 204px;
+}
 
 sidebar{
-   /*color: #00FFFF; */
-    height: 88vh;
+   /*color: #00FFFF;  width: 33vh;*/
+    width: 204px;
+    height: 89vh;
+    background-color: rgba(98, 148, 250, 0.74);
+    /*  background-color: rgba(57, 101, 250, 0.74); */
+
 }
 
 
 md-list-item.sidebar-item{
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 2px;
+    border-right-width: 2px;
     min-height: 20px;
-    height: 12vh; /* ~~88/7 -height md-list/number of sidebar items */
+    height: 8vh; /* ~~88/7 -height md-list/number of sidebar items */
     /* color: #00FFFF; */
     /* font-size: todo */
+}
+
+#topSize{
+    border-top-width: 2px;
+}
+#bottomSize{
+    border-bottom-width: 2px;
+}
+#add{
+    border-style: solid;
+    border-width: 2px;
 }

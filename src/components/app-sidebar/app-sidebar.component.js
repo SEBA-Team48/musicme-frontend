@@ -34,7 +34,7 @@ class AppSidebarComponent {
         }
 
         redirectYourAppointmentPage(){
-             this.$state.go('login',{})
+             this.$state.go('lessons',{})
         }
 
         redirectSearchATeacher(){

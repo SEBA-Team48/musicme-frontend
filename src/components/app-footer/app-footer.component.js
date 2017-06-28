@@ -21,7 +21,10 @@ class AppFooterComponent {
 class AppFooterComponentController{
     constructor(){
         this.year = new Date().getFullYear();
+
+
     }
+
 
 }
 

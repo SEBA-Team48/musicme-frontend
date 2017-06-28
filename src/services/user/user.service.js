@@ -18,10 +18,13 @@ export default class UserService {
         return 'UserService';
     }
 
-    register(user, pass) {
+    register(user, pass, fname, lname, emailadress) {
         return this.$http.post(`${ this.API_URL }/user/signup`, {
             username: user,
-            password: pass
+            password: pass,
+			fname: fname,
+			lname: lname,
+			emailadress: emailadress
         });
     }
 
@@ -44,6 +47,7 @@ export default class UserService {
         let base64 = base64Url.replace('-', '+').replace('_', '/');
         return JSON.parse(this.$window.atob(base64)).user;
     }
+
 
     isAuthenticated() {
         return !!this.$window.localStorage['jwtToken'];

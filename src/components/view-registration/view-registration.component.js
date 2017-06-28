@@ -4,7 +4,6 @@
 import UserService from './../../services/user/user.service';
 
 import template from './view-registration.template.html';
-import './view-registration.style.css';
 
 class ViewRegistrationComponent {
     constructor(){
@@ -35,9 +34,10 @@ class ViewRegistrationComponentController {
         let lname = this.registration.lname;
         let user = this.registration.username;
         let password = this.registration.password;
-        this.UserService.
-        this.UserService.registration(user,password).then(()=> {
-            this.$state.go('lessons',{});
+        let emailadress = this.registration.emailadress;
+		
+        this.UserService.register(user,password,fname,lname,emailadress).then(()=> {
+            this.$state.go('landing',{});
         });
     }
 
