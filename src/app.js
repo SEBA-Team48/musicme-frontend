@@ -22,6 +22,8 @@ import ViewLessonCreate from './components/view-lesson-create/view-lesson-create
 import ViewLogin from './components/view-login/view-login';
 import ViewLandingPage from './components/view-landing-page/view-landing-page';
 import ViewRegistration from './components/view-registration/view-registration';
+import ViewImpressum from './components/view-impressum/view-impressum';
+
 
 let app = angular.module('app', [
     uiRouter,
@@ -37,7 +39,8 @@ let app = angular.module('app', [
     ViewLessonCreate.name,
     ViewLogin.name,
     ViewLandingPage.name,
-	ViewRegistration.name
+	ViewRegistration.name,
+    ViewImpressum.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

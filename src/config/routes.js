@@ -6,7 +6,8 @@ import LessonEditComponent from './../components/view-lesson-edit/view-lesson-ed
 import LessonCreateComponent from './../components/view-lesson-create/view-lesson-create.component';
 import LoginComponent from './../components/view-login/view-login.component';
 import LandingPageComponent from './../components/view-landing-page/view-landing-page.component';
-import RegistrationComponent from './../components/view-registration/view-registration.component'
+import RegistrationComponent from './../components/view-registration/view-registration.component';
+import ImpressumComponent from './../components/view-impressum/view-impressum.component'
 
 
 import LessonsService from './../services/lessons/lessons.service';
@@ -71,6 +72,11 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('register',{
             url: '/register',
             component: RegistrationComponent.name,
+        })
+
+        .state('impressum',{
+            url: '/impressum',
+            component: ImpressumComponent.name,
         })
 
 }
