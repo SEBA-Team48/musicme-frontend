@@ -7,8 +7,8 @@ import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 
 import ngMdIcons from 'angular-material-icons';
-import weeklyScheduler from 'angular-weekly-scheduler';
 import LessonsService from './services/lessons/lessons';
+import TeachersService from './services/teachers/teachers';
 import UserService from './services/user/user';
 
 import Routes from './config/routes';
@@ -23,15 +23,20 @@ import ViewLogin from './components/view-login/view-login';
 import ViewLandingPage from './components/view-landing-page/view-landing-page';
 import ViewRegistration from './components/view-registration/view-registration';
 import ViewImpressum from './components/view-impressum/view-impressum';
+import ViewTeacher from './components/view-teacher/view-teacher';
+import ViewTeachers from './components/view-teachers/view-teachers';
+import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
+import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
+
 
 
 let app = angular.module('app', [
     uiRouter,
     angularMaterial,
-    weeklyScheduler,
     ngMdIcons,
     UserService.name,
     LessonsService.name,
+    TeachersService.name,
     AppContent.name,
     ViewLessons.name,
     ViewLesson.name,
@@ -40,7 +45,11 @@ let app = angular.module('app', [
     ViewLogin.name,
     ViewLandingPage.name,
 	ViewRegistration.name,
-    ViewImpressum.name
+    ViewImpressum.name,
+    ViewTeacher.name,
+    ViewTeachers.name,
+    ViewTeacherCreate.name,
+    ViewTeacherEdit.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

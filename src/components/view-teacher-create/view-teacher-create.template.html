@@ -1,0 +1,65 @@
+<md-content layout-padding>
+    <div class="container" layout="row" layout-wrap layout-align="center start" ng-cloak>
+        <md-card flex="100" layout-margin>
+            <h1> Add new teacher profile</h1>
+            <p> Please enter the necessary information about yourself </p>
+            <br>
+            <h3> {{$ctrl.teacher.teacherName}} </h3>
+            <br/>
+            <form name="teacherForm">
+                <md-input-container class="md-icon-float md-block">
+                    <label>Name</label>
+                    <md-icon>
+                        <ng-md-icon icon="teacherName"></ng-md-icon>
+                    </md-icon>
+                    <input ng-model="$ctrl.teacher.teacherName" type="text" required>
+                </md-input-container>
+                <div>
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Instrument(s)</label>
+                        <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
+                            <md-option value="piano">Piano</md-option>
+                            <md-option value="guitar">Guitar</md-option>
+                            <md-option value="violin">Violin</md-option>
+                            <md-option value="recorder">Redcorder</md-option>
+                            <md-option value="drums">Drums</md-option>
+                            <md-option value="transverse_flute">Transverse flute</md-option>
+                            <md-option value="clarinet">Clarinet</md-option>
+                            <md-option value="trumpet">Trumpet</md-option>
+                            <md-option value="saxophone">Saxophone</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container class="md-icon-float class="md-block">
+                    <label>Rating</label>
+                    <md-select name="type" ng-model="$ctrl.teacher.rating" required>
+                        <md-option value="1">Very good</md-option>
+                        <md-option value="2">Good</md-option>
+                        <md-option value="3">Ok</md-option>
+                        <md-option value="4">Sufficient</md-option>
+                        <md-option value="5">Bad</md-option>
+                        <md-option value="6">Very Bad</md-option>
+                    </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                    <md-button ng-disabled="!teacherForm.$valid" ng-click="$ctrl.save()" class="md-raised md-primary">Save profile
+                    </md-button>
+                    <!--<md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button> -->
+                    <!--<md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>-->
+                    <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" title="On this page, you can create a new profile.">
+                        <md-icon>
+                            <ng-md-icon icon="help"></ng-md-icon>
+                        </md-icon>
+                    </md-button>
+                </div>
+            </form>
+    </div>
+
+    </md-card>
+    </div>
+</md-content>

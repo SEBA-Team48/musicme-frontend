@@ -9,7 +9,7 @@ import ViewLessonsComponent from './view-lessons.component';
 angular.module('tabsDemoDynamicHeight', ['ngMaterial']);
 
 
-export default angular.module('ViewLessons', ['weeklyScheduler'])
+export default angular.module('ViewLessons', [])
     .component(ViewLessonsComponent.name, new ViewLessonsComponent);
 
 

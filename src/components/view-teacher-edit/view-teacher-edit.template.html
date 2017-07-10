@@ -1,0 +1,24 @@
+<div class="container" layout="row" layout-align="center" flex>
+
+    <div layout="column" layout-padding>
+        <md-content class="md-no-momentum">
+            <h1> {{$ctrl.teacher.teacherName}} </h1>
+            <br/>
+            <form name="teacherForm">
+
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                    <md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button>
+                    <md-button class="md-raised" ng-click="$ctrl.newTeacher()">Add New teacher</md-button>
+                    <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                        <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
+                    </md-button>
+                    <div class="tooltip" ng-show="tooltip" md-direction="bottom">On this page, you can create a new lesson and see the list of your lessons.
+                    </div>
+                </div>
+            </form>
+        </md-content>
+    </div>
+</div>
+

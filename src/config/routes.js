@@ -7,10 +7,15 @@ import LessonCreateComponent from './../components/view-lesson-create/view-lesso
 import LoginComponent from './../components/view-login/view-login.component';
 import LandingPageComponent from './../components/view-landing-page/view-landing-page.component';
 import RegistrationComponent from './../components/view-registration/view-registration.component';
-import ImpressumComponent from './../components/view-impressum/view-impressum.component'
+import ImpressumComponent from './../components/view-impressum/view-impressum.component';
+import TeacherComponent from './../components/view-teacher/view-teacher.component';
+import TeachersComponent from './../components/view-teachers/view-teachers.component';
+import TeacherEditComponent from './../components/view-teacher-edit/view-teacher-edit.component';
+import TeacherCreateComponent from './../components/view-teacher-create/view-teacher-create.component';
 
 
 import LessonsService from './../services/lessons/lessons.service';
+import TeachersService from './../services/teachers/teachers.service';
 
 
 resolveLesson.$inject = ['$stateParams', LessonsService.name];
@@ -23,7 +28,15 @@ function resolveLessons(lessonsService){
     return lessonsService.list();
 }
 
+resolveTeacher.$inject = ['$stateParams', TeachersService.name];
+function resolveTeacher($stateParams, teachersService){
+    return teachersService.get($stateParams.teacherId);
+}
 
+resolveTeachers.$inject = [TeachersService.name];
+function resolveTeachers(teachersService){
+    return teachersService.list();
+}
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
 export default function config ($stateProvider, $urlRouterProvider){
 
@@ -48,13 +61,37 @@ export default function config ($stateProvider, $urlRouterProvider){
             resolve: {
                 lesson : resolveLesson
             }
-
         })
         .state('lessonEdit', {
             url: '/lessons/:lessonId/edit',
             component: LessonEditComponent.name,
             resolve: {
                 lesson : resolveLesson
+            }
+        })
+        .state('teachers', {
+            url: '/teachers',
+            component: TeachersComponent.name,
+            resolve: {
+                teachers : resolveTeachers
+            }
+        })
+        .state('teacherAdd', {
+            url: '/teachers/new',
+            component: TeacherCreateComponent.name
+        })
+        .state('teacher', {
+            url: '/teachers/:teacherId',
+            component: TeacherComponent.name,
+            resolve: {
+                teacher : resolveTeacher
+            }
+        })
+        .state('teacherEdit', {
+            url: '/teachers/:teacherId/edit',
+            component: TeacherEditComponent.name,
+            resolve: {
+                teacher : resolveTeacher
             }
         })
         .state('landingPage', {

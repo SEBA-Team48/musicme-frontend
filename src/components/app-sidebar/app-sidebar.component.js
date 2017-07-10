@@ -26,7 +26,7 @@ class AppSidebarComponent {
 
     }
         redirectEditProfile(){
-             this.$state.go('lessons',{})
+             this.$state.go('teachers',{})
         }
 
         redirectYourInbox(){
@@ -38,7 +38,7 @@ class AppSidebarComponent {
         }
 
         redirectSearchATeacher(){
-             this.$state.go('login',{})
+             this.$state.go('landingPage',{})
         }
 
         redirectRateATeacher(){
