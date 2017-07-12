@@ -39,6 +39,7 @@ class ViewTeacherEditComponentController{
     save() {
         let _id = this.teacher['_id'];
 
+        console.log("yet another save method");
         this.TeachersService.update(this.model).then(data => {
             this.teacher = JSON.parse(JSON.stringify(data));
 

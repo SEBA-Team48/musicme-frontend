@@ -20,3 +20,10 @@ md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
     color: #ffffff;
     background: #ffffff;
 }
+
+
+
+.switchdemoBasicUsage .inset {
+    padding-left: 25px;
+    padding-top: 25px; }
+

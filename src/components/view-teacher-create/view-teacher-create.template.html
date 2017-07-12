@@ -7,6 +7,7 @@
             <h3> {{$ctrl.teacher.teacherName}} </h3>
             <br/>
             <form name="teacherForm">
+                <div>
                 <md-input-container class="md-icon-float md-block">
                     <label>Name</label>
                     <md-icon>
@@ -14,10 +15,20 @@
                     </md-icon>
                     <input ng-model="$ctrl.teacher.teacherName" type="text" required>
                 </md-input-container>
+                </div>
+                <div>
+                <md-input-container class="md-icon-float md-block">
+                    <label>Age</label>
+                    <md-icon>
+                        <ng-md-icon icon="age"></ng-md-icon>
+                    </md-icon>
+                    <input ng-model="$ctrl.teacher.age" type="text" required>
+                </md-input-container>
+                </div>
                 <div>
                     <md-input-container class="md-icon-float md-block">
                         <label>Instrument(s)</label>
-                        <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
+                        <md-select name="type" ng-model="$ctrl.teacher.instrument_list" multiple required>
                             <md-option value="piano">Piano</md-option>
                             <md-option value="guitar">Guitar</md-option>
                             <md-option value="violin">Violin</md-option>
@@ -31,26 +42,20 @@
                     </md-input-container>
                 </div>
                 <div>
-                    <md-input-container class="md-icon-float class="md-block">
-                    <label>Rating</label>
-                    <md-select name="type" ng-model="$ctrl.teacher.rating" required>
-                        <md-option value="1">Very good</md-option>
-                        <md-option value="2">Good</md-option>
-                        <md-option value="3">Ok</md-option>
-                        <md-option value="4">Sufficient</md-option>
-                        <md-option value="5">Bad</md-option>
-                        <md-option value="6">Very Bad</md-option>
-                    </md-select>
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Location</label>
+                        <md-icon>
+                            <ng-md-icon icon="location"></ng-md-icon>
+                        </md-icon>
+                        <input ng-model="$ctrl.teacher.location" type="text" required>
                     </md-input-container>
                 </div>
 
                 <div layout="row">
                     <span flex></span>
                     <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-                    <md-button ng-disabled="!teacherForm.$valid" ng-click="$ctrl.save()" class="md-raised md-primary">Save profile
+                    <md-button ng-disabled="!teacherForm.$valid" ng-click="$ctrl.save()" class="md-raised md-primary">Save changes
                     </md-button>
-                    <!--<md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button> -->
-                    <!--<md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>-->
                     <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" title="On this page, you can create a new profile.">
                         <md-icon>
                             <ng-md-icon icon="help"></ng-md-icon>

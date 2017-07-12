@@ -25,8 +25,13 @@ class ViewTeachersComponentController{
         this.$state = $state;
         this.TeachersService = TeachersService;
         this.UserService = UserService;
+        /*User.findOne({
+            where: {id: req.params.id}
+        }).then(function(user) {
+            this.teachers.find({_id: req.params.id, 'name': "test"});
+        });*/
 
-    }
+        }
 
     details (teacher) {
         let _id = teacher['_id'];

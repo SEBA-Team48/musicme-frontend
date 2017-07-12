@@ -30,6 +30,7 @@ class ViewTeacherCreateComponentController{
     };
 
     save() {
+        console.log("save a teacher")
         let user = this.UserService.getCurrentUser();
 
         this.teacher['user'] = user['_id'];

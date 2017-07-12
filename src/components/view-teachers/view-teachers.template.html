@@ -6,32 +6,55 @@
                     <md-content class="md-padding">
                         <div layout="column" layout-padding>
                             <md-content class="md-no-momentum">
-                                <h3>Create a new profile</h3>
+                                <h3>Here, you can see a list of the available teachers</h3>
                                 <br>
                                 <form name="teacherForm">
-                                    <md-list>
-                                        <md-list-item aria-label="teacher" ng-click="$ctrl.details(teacher)" class="noright" ng-repeat="teacher in $ctrl.teachers">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Instruments</th>
+                                            <th>Location</th>
+                                            <th>Rating</th>
+                                            <th>Cancel</th>
+                                        </tr>
+
+                                        <tr ng-repeat = "teacher in $ctrl.teachers">
+                                            <td>{{ teacher.teacherName }}</td>
+                                            <td>{{ teacher.age }}</td>
+                                            <td>{{ teacher.instrument_list }}</td>
+                                            <td>{{ teacher.location }}</td>
+                                            <td> Rating </td>
+                                            <td><md-button class="md-icon-button"aria-label="Cancel lesson" ng-click="$ctrl.delete(teacher)" >
+                                                <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
+                                            </md-button></td>
+                                        </tr>
+                                    </table>
 
 
-                                            <p> {{teacher.teacherName}},{{teacher.age}}</p>
+                                    <!--<md-list>
+                                        <md-list-item aria-label="Teacher" ng-click="$ctrl.details(teacher)" class="noright" ng-repeat="teacher in $ctrl.teachers">
 
 
-                                            <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(teacher)">
+                                            <p> {{teacher.teacherName}}, {{teacher.age}}, {{teacher.instrument_list}}, {{teacher.location}}</p>
+
+                                            <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)">
                                                 <md-icon>
                                                     <ng-md-icon icon="mode_edit"></ng-md-icon>
                                                 </md-icon>
                                             </md-button>
 
-                                            <md-button class="md-icon-button" aria-label="Delete Item" ng-click="$ctrl.delete(teacher)">
-                                                <md-icon>
-                                                    <ng-md-icon icon="delete"></ng-md-icon>
-                                                </md-icon>
+                                            <md-button class="md-icon-button"aria-label="Cancel lesson" ng-click="$ctrl.delete(teacher)" >
+                                                <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
                                             </md-button>
+
                                             <md-divider ng-if="!$last"></md-divider>
                                         </md-list-item>
                                         <md-divider></md-divider>
 
-                                    </md-list>
+                                    </md-list>-->
+                                        </div>
+                                        </div>
                                 </form>
                             </md-content>
 
@@ -47,7 +70,7 @@
         <div layout="row">
             <span flex></span>
             <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-            <md-button class="md-raised" ng-click="$ctrl.newTeacher()">Create profile</md-button>
+            <md-button class="md-raised" ng-click="$ctrl.newTeacher()">Add new teacher</md-button>
             <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" title="On this page, you can create a new profile.">
                 <md-icon>
                     <ng-md-icon icon="help"></ng-md-icon>

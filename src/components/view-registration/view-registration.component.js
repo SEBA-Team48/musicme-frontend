@@ -37,7 +37,7 @@ class ViewRegistrationComponentController {
         let emailadress = this.registration.emailadress;
 		
         this.UserService.register(user,password,fname,lname,emailadress).then(()=> {
-            this.$state.go('landing',{});
+            this.$state.go('landingPage',{});
         });
     }
 

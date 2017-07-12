@@ -26,7 +26,7 @@ class AppSidebarComponent {
 
     }
         redirectEditProfile(){
-             this.$state.go('teachers',{})
+            this.$state.go('teachers')
         }
 
         redirectYourInbox(){
@@ -46,7 +46,7 @@ class AppSidebarComponent {
         }
 
         redirectCancelALesson(){
-             this.$state.go('login',{})
+             this.$state.go('teachers',{})
         }
 
         redirectAddNewTimeSlot(){
