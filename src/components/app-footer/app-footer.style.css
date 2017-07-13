@@ -1,9 +1,9 @@
 footer {
     max-height: 35px ;
-    height: 4vh;
+    height: 35px;
     background-color: rgba(98, 148, 250, 0.74);
 }
-p{
+#footerText{
     margin:0;
 }
 
