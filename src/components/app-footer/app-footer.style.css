@@ -3,6 +3,9 @@ footer {
     height: 4vh;
     background-color: rgba(98, 148, 250, 0.74);
 }
+p{
+    margin:0;
+}
 
 footer > div > p {
     margin-top: 4px;
