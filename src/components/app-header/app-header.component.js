@@ -26,6 +26,9 @@ class AppHeaderComponentController{
         this.UserService = UserService;
 
     }
+    seeProfile(){
+        this.$state.go('profile',{});
+    }
 
     openMenu($mdMenu, ev) {
         $mdMenu.open(ev);

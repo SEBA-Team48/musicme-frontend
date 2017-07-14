@@ -42,7 +42,7 @@ class AppSidebarComponent {
         }
 
         redirectRateATeacher(){
-             this.$state.go('login',{})
+             this.$state.go('rating',{})
         }
 
         redirectCancelALesson(){

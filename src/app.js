@@ -27,6 +27,8 @@ import ViewTeacher from './components/view-teacher/view-teacher';
 import ViewTeachers from './components/view-teachers/view-teachers';
 import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
 import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
+import ViewRating from './components/view-rating/view-rating';
+import ViewProfile from './components/view-profile/view-profile';
 
 
 
@@ -49,7 +51,9 @@ let app = angular.module('app', [
     ViewTeacher.name,
     ViewTeachers.name,
     ViewTeacherCreate.name,
-    ViewTeacherEdit.name
+    ViewTeacherEdit.name,
+    ViewRating.name,
+    ViewProfile.name
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

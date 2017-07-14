@@ -1,0 +1,12 @@
+<md-content class="md-warm md-hue-3" layout="row" layout-wrap layout-align="center start">
+    <md-card flex="100">
+        <md-card-content>
+            <form name="ProfileForm">
+                <h1>{{$ctrl.getCurrentUser()}}'s Profile</h1>
+                <p>First name: {{$ctrl.getFirstName()}}</p>
+                <p>Last name: {{$ctrl.getLastName()}}</p>
+                <p>Emailadress: {{$ctrl.getEmail()}}</p>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

@@ -12,6 +12,8 @@ import TeacherComponent from './../components/view-teacher/view-teacher.componen
 import TeachersComponent from './../components/view-teachers/view-teachers.component';
 import TeacherEditComponent from './../components/view-teacher-edit/view-teacher-edit.component';
 import TeacherCreateComponent from './../components/view-teacher-create/view-teacher-create.component';
+import RatingComponent from './../components/view-rating/view-rating.component';
+import ProfileComponent from './../components/view-profile/view-profile.component';
 
 
 import LessonsService from './../services/lessons/lessons.service';
@@ -114,6 +116,16 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('impressum',{
             url: '/impressum',
             component: ImpressumComponent.name,
+        })
+
+        .state('rating',{
+            url: '/rating',
+            component: RatingComponent.name,
+        })
+
+        .state('profile',{
+            url: '/profile',
+            component: ProfileComponent.name,
         })
 
 }

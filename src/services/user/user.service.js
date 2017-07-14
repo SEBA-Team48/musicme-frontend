@@ -27,7 +27,13 @@ export default class UserService {
 			emailadress: emailadress
         });
     }
-
+    /*rate(rate, rec, com){
+        return this.$http.post(`${ this.API_URL }/landingPage`, {
+            rating: rate,
+            recommend: rec,
+            comment: com
+        });
+    }*/
     login(user, pass) {
         return this.$http.post(`${ this.API_URL }/user/login`, {
             username: user,

@@ -1,0 +1,30 @@
+<md-content class="md-warm md-hue-3" layout="row" layout-wrap layout-align="center start">
+    <md-card flex="100">
+        <md-card-content>
+            <form name="RatingForm">
+                <h1>Rate this Teacher</h1>
+
+                <md-input-container class="md-block">
+                    <label>Rate this person</label>
+                    <md-select name="rate" ng-model="$ctrl.user.rating" required>
+                        <md-option  value="1">*</md-option>
+                        <md-option  value="2">**</md-option>
+                        <md-option  value="3">***</md-option>
+                        <md-option  value="4">****</md-option>
+                        <md-option  value="5">*****</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Leave your Comment here</label>
+                    <input type="text"  name="comment" ng-model="$ctrl.user.comment"/>
+                </md-input-container>
+                <div layout="row">
+                    <span flex></span>
+                <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                <md-button ng-disabled="!RatingForm.$valid" ng-click="$ctrl.submit()" class="md-raised md-primary">Save</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>
