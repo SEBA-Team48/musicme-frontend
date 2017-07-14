@@ -14,6 +14,8 @@
             <md-list-item id ="bottomSize" class="sidebar-item" ng-click="$ctrl.redirectCancelALesson()"> Cancel a lesson
             </md-list-item>
         </md-list>
-        <img id="add" ng-src="http://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png" alt="Description" />
+        <md-card flex="100">
+            <img ng-src="{{$ctrl.getLessonDisplayImageURL()}}" class="md-card-image" alt="Lesson Image">
+        </md-card>
     </sidebar>
 </md-sidenav>

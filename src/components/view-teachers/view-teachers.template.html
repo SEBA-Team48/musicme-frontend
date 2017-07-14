@@ -9,17 +9,17 @@
                                 <h3>Here, you can see a list of the available teachers</h3>
                                 <br>
                                 <form name="teacherForm">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered" border="1">
                                         <tr>
                                             <th>Name</th>
                                             <th>Age</th>
                                             <th>Instruments</th>
                                             <th>Location</th>
                                             <th>Rating</th>
-                                            <th></th>
+                                            <th>Cancel</th>
                                         </tr>
 
-                                        <tr ng-repeat = "teacher in $ctrl.teachers">
+                                        <tr aria-label="Teacher" ng-click="$ctrl.details(teacher)" class="no-right" ng-repeat = "teacher in $ctrl.teachers">
                                             <td>{{ teacher.teacherName }}</td>
                                             <td>{{ teacher.age }}</td>
                                             <td>{{ teacher.instrument_list }}</td>

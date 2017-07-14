@@ -31,6 +31,18 @@ class ViewTeachersComponentController{
             this.teachers.find({_id: req.params.id, 'name': "test"});
         });*/
 
+       /* Teacher.findOne({
+            where: {teacherName: 'Sanchez'}
+        }).then(function(teacher){
+            this.teachers.find({'teacherName': "Sanchez" });
+
+    });*/
+
+          /*  , 'name instrument_list', function (err, teacher) {
+            if (err) return handleError(err);
+            console.log('%s %s is a %s.', teacher.name.first, teacher.teacherName, teacher.instrument_list) // Space Ghost is a talk show host.
+        })*/
+
         }
 
     details (teacher) {
