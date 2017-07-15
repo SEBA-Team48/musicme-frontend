@@ -42,7 +42,7 @@ class ViewLessonEditComponentController{
         this.LessonsService.update(this.model).then(data => {
             this.lesson = JSON.parse(JSON.stringify(data));
 
-            this.$state.go('lesson',{ lessonId:_id});
+            this.$state.go('lessons',{});
         });
 
     };

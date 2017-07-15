@@ -17,9 +17,10 @@
                                             <th>Frequency</th>
                                             <th>Edit lesson</th>
                                             <th>Cancel/Delete</th>
+                                            <th>Details</th>
                                         </tr>
 
-                                        <tr aria-label="Lesson" ng-click="$ctrl.details(lesson)" class="no-right" ng-repeat = "lesson in $ctrl.lessons">
+                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons">
                                             <td>{{ lesson.title }}</td>
                                             <td>{{ lesson.start_day }}</td>
                                             <td>{{ lesson.start_time }}</td>
@@ -31,6 +32,9 @@
                                             </md-button></td>
                                             <td><md-button class="md-icon-button" aria-label="Cancel lesson" ng-click="$ctrl.delete(lesson)" >
                                                 <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
+                                            </md-button></td>
+                                            <td><md-button ng-click="$ctrl.details(lesson)">
+                                                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
                                             </md-button></td>
                                         </tr>
                                     </table>

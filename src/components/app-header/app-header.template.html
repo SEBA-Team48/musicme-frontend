@@ -32,9 +32,9 @@
             </md-button>
         </md-menu-item>
     <md-menu-item>
-        <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5">
-                DE
-            </md-switch>
+        <md-input-container>
+            <md-switch ng-model="showHints"> {{showHints ? "EN" : "DE"}}</md-switch>
+        </md-input-container>
     </md-menu-item>
         <!--<span flex="5"></span>
         <md-menu>
