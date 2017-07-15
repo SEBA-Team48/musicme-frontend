@@ -13,7 +13,7 @@
         <div class="row">
             <md-input-container class="md-icon-float md-block">
                 <label>Instrument(s)</label>
-                <md-select name="type" ng-model="$ctrl.lesson.instrument_list" multiple required>
+                <md-select name="type" ng-model="$ctrl.model.instrument_list" multiple required>
                     <md-option value="piano">Piano</md-option>
                     <md-option value="guitar">Guitar</md-option>
                     <md-option value="violin">Violin</md-option>
@@ -25,23 +25,23 @@
                     <md-option value="saxophone">Saxophone</md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container md-datepicker ng-model="$ctrl.lesson.start_day" placeholder="Start day" required class="md-icon-float md-block">
+            <md-input-container md-datepicker ng-model="$ctrl.model.start_day" placeholder="Start day" required class="md-icon-float md-block">
                 <label>Date</label>
-                <md-datepicker ng-model="$ctrl.lesson.start_day" required></md-datepicker>
+                <md-datepicker ng-model="$ctrl.model.start_day" required></md-datepicker>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Start time</label>
-                <input ng-model="$ctrl.lesson.start_time" type=moment('"time"').toDate() required class="form-control"
+                <input ng-model="$ctrl.model.start_time" type=moment('"time"').toDate() required class="form-control"
                        placeholder="08:00">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>End time</label>
-                <input ng-model="$ctrl.lesson.end_time" type=moment('"time"').toDate() required class="form-control"
+                <input ng-model="$ctrl.model.end_time" type=moment('"time"').toDate() required class="form-control"
                        placeholder="10:00">
             </md-input-container>
             <md-input-container class="md-block">
                 <label>Session frequency</label>
-                <md-select name="type" ng-model="$ctrl.lesson.frequency" required>
+                <md-select name="type" ng-model="$ctrl.model.frequency" required>
                     <md-option value="onetime">one time</md-option>
                     <md-option value="weekly">weekly</md-option>
                     <md-option value="biweekly">bi weekly</md-option>
@@ -52,7 +52,7 @@
             <div layout="row">
                 <span flex></span>
                 <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-                <md-button class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button>
+                <md-button ng-disabled="!lessonForm.$valid" class="md-raised" type="submit" ng-click="$ctrl.save()">Submit</md-button>
                 <md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
                 <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
                     <md-icon><ng-md-icon icon="help"></ng-md-icon></md-icon>
