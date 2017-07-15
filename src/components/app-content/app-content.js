@@ -9,6 +9,8 @@ import AppSidebar from './../app-sidebar/app-sidebar';
 import AppContentComponent from './app-content.component';
 
 
+
+
 export default angular.module('AppView', [
     AppHeader.name,
     AppFooter.name,

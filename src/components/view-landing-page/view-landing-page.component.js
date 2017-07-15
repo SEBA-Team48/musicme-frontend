@@ -38,17 +38,19 @@ class ViewLandingPageComponentController{
         }
     };
 
-    getSearchBannerURL(){
-        let bannerURL = 'http://www.freestockphotos.name/wallpaper-original/wallpapers/background-with-musical-instruments-9057.jpg';
-        //bannerURL = "http://www.themesltd.com/headers2/musical_instruments.png";
+    search() {
+        $scope.searchQuery = $scope.query;
+        $scope.lessonsToFilter= $ctrl.lessons;
+        $scope.searchResult=true;
+    }
 
+    getSearchBannerURL(){
+        let bannerURL = './musical-instruments.jpg';
         return bannerURL;
     }
 
     getLessonDisplayImageURL(){
-
-        let lessonDisplayImageURL = 'https://previews.123rf.com/images/stockbroker/stockbroker1411/stockbroker141103891/33604544-Young-boy-playing-violin-in-music-lesson-Stock-Photo.jpg';
-
+        let lessonDisplayImageURL = './music-lesson-Stock-Photo.jpg';
         return lessonDisplayImageURL;
     }
 

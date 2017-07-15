@@ -30,6 +30,9 @@ import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
 import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
 import ViewMessages from './components/view-messages/view-messages';
 
+import ViewRating from './components/view-rating/view-rating';
+import ViewProfile from './components/view-profile/view-profile';
+
 
 let app = angular.module('app', [
     uiRouter,
@@ -52,7 +55,10 @@ let app = angular.module('app', [
     ViewTeachers.name,
     ViewTeacherCreate.name,
     ViewTeacherEdit.name,
-    ViewMessages.name
+    ViewMessages.name,
+    ViewRating.name,
+    ViewProfile.name
+
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

@@ -42,7 +42,7 @@ class AppSidebarComponent {
         }
 
         redirectRateATeacher(){
-             this.$state.go('login',{})
+             this.$state.go('rating',{})
         }
 
         redirectCancelALesson(){
@@ -53,6 +53,12 @@ class AppSidebarComponent {
             this.$state.go('lessonAdd',{})
         }
 
+        getLessonDisplayImageURL(){
+
+            let lessonDisplayImageURL = 'https://previews.123rf.com/images/stockbroker/stockbroker1411/stockbroker141103891/33604544-Young-boy-playing-violin-in-music-lesson-Stock-Photo.jpg';
+
+            return lessonDisplayImageURL;
+        }
 
         static get $inject(){
             return ['$state', UserService.name];

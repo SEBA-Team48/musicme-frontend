@@ -27,8 +27,12 @@ class AppFooterComponentController{
         this.UserService = UserService;
     }
 
-    test(){
+    impressum(){
         this.$state.go('impressum',{})
+    }
+
+    privacy(){
+        this.$state.go('privacy', {})
     }
 
     static get $inject(){
