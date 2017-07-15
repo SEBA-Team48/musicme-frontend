@@ -12,12 +12,16 @@ import TeacherComponent from './../components/view-teacher/view-teacher.componen
 import TeachersComponent from './../components/view-teachers/view-teachers.component';
 import TeacherEditComponent from './../components/view-teacher-edit/view-teacher-edit.component';
 import TeacherCreateComponent from './../components/view-teacher-create/view-teacher-create.component';
+
+import MessagesComponent from './../components/view-messages/view-messages.component';
 import RatingComponent from './../components/view-rating/view-rating.component';
 import ProfileComponent from './../components/view-profile/view-profile.component';
 
 
+
 import LessonsService from './../services/lessons/lessons.service';
 import TeachersService from './../services/teachers/teachers.service';
+import MessagesService from './../services/messages/messages.service';
 
 
 resolveLesson.$inject = ['$stateParams', LessonsService.name];
@@ -39,6 +43,17 @@ resolveTeachers.$inject = [TeachersService.name];
 function resolveTeachers(teachersService){
     return teachersService.list();
 }
+
+resolveMessage.$inject = ['$stateParams', MessagesService.name];
+function resolveMessage($stateParams, messagesService){
+    return messagesService.get($stateParams.messageId);
+}
+
+resolveMessages.$inject = [MessagesService.name];
+function resolveMessages(messagesService) {
+    return messagesService.list();
+}
+
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
 export default function config ($stateProvider, $urlRouterProvider){
 
@@ -118,6 +133,22 @@ export default function config ($stateProvider, $urlRouterProvider){
             component: ImpressumComponent.name,
         })
 
+
+        .state('messages', {
+            url: '/messages',
+            component: MessagesComponent.name,
+            resolve: {
+                messages : resolveMessages
+            }
+        })/*
+        .state('message', {
+            url: '/messages/:messageId',
+            component: MessageComponent.name,
+            resolve: {
+                message : resolveMessage
+            }
+        })*/
+
         .state('rating',{
             url: '/rating',
             component: RatingComponent.name,
@@ -127,6 +158,7 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/profile',
             component: ProfileComponent.name,
         })
+
 
 }
 

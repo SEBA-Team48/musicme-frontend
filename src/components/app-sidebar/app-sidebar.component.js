@@ -30,7 +30,7 @@ class AppSidebarComponent {
         }
 
         redirectYourInbox(){
-            this.$state.go('login',{})
+            this.$state.go('messages',{})
         }
 
         redirectYourAppointmentPage(){

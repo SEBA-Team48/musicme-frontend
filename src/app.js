@@ -10,6 +10,7 @@ import ngMdIcons from 'angular-material-icons';
 import LessonsService from './services/lessons/lessons';
 import TeachersService from './services/teachers/teachers';
 import UserService from './services/user/user';
+import MessagesService from './services/messages/messages';
 
 import Routes from './config/routes';
 import Middlewares from './config/middlewares';
@@ -27,9 +28,10 @@ import ViewTeacher from './components/view-teacher/view-teacher';
 import ViewTeachers from './components/view-teachers/view-teachers';
 import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
 import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
+import ViewMessages from './components/view-messages/view-messages';
+
 import ViewRating from './components/view-rating/view-rating';
 import ViewProfile from './components/view-profile/view-profile';
-
 
 
 let app = angular.module('app', [
@@ -39,6 +41,7 @@ let app = angular.module('app', [
     UserService.name,
     LessonsService.name,
     TeachersService.name,
+    MessagesService.name,
     AppContent.name,
     ViewLessons.name,
     ViewLesson.name,
@@ -52,8 +55,10 @@ let app = angular.module('app', [
     ViewTeachers.name,
     ViewTeacherCreate.name,
     ViewTeacherEdit.name,
+    ViewMessages.name,
     ViewRating.name,
     ViewProfile.name
+
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');
