@@ -18,7 +18,7 @@ import RatingComponent from './../components/view-rating/view-rating.component';
 import ProfileComponent from './../components/view-profile/view-profile.component';
 
 
-
+import UserService from './../services/user/user.service';
 import LessonsService from './../services/lessons/lessons.service';
 import TeachersService from './../services/teachers/teachers.service';
 import MessagesService from './../services/messages/messages.service';
@@ -27,6 +27,11 @@ import MessagesService from './../services/messages/messages.service';
 resolveLesson.$inject = ['$stateParams', LessonsService.name];
 function resolveLesson($stateParams,lessonsService){
     return lessonsService.get($stateParams.lessonId);
+}
+
+resolveUser.$inject = [UserService.name];
+function resolveUser(userService){
+    return userService.getUserDetails();
 }
 
 resolveLessons.$inject = [LessonsService.name];
@@ -157,6 +162,9 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('profile',{
             url: '/profile',
             component: ProfileComponent.name,
+            resolve: {
+                user : resolveUser
+            }
         })
 
 

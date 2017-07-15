@@ -11,6 +11,7 @@ export default class UserService {
         this.$http = $http;
         this.$window = $window;
         this.API_URL = API_URL;
+        this.resourceUrl = `${ API_URL }/user/`;
 
     }
 
@@ -55,6 +56,28 @@ export default class UserService {
         return JSON.parse(this.$window.atob(base64)).user;
     }
 
+    getUserDetails() {
+        let user = this.getCurrentUser();
+        let url = `${ this.resourceUrl }${ user._id }`;
+        return this.$http.get(url).then(responce => {
+
+            return new Promise((resolve, reject) => {
+                resolve(responce.data);
+            });
+
+        })
+    }
+
+    updateUserDetails(user) {
+        let url = `${ this.resourceUrl }${ user['_id'] }`;
+        return this.$http.put(url,user).then(responce => {
+
+            return new Promise((resolve, reject) => {
+                resolve(responce.data);
+            });
+
+        })
+    }
 
     isAuthenticated() {
         return !!this.$window.localStorage['jwtToken'];
