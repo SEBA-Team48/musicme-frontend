@@ -40,7 +40,7 @@ class ViewRatingComponentController {
         let comment = this.rating.comment;
 
 
-        this.UserService.rate(rating,recommend,comment).then(()=> {
+        this.UserService.rate(rating,comment).then(()=> {
             this.$state.go('landingPage',{});
     });
     }
