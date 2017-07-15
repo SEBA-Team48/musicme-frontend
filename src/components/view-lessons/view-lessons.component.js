@@ -53,6 +53,11 @@ class ViewLessonsComponentController{
 
     }
 
+    cancel() {
+        this.$state.go('lessons',{});
+    };
+
+
     delete(lesson) {
         if (this.UserService.isAuthenticated()) {
             let _id = lesson['_id'];

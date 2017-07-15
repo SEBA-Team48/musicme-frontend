@@ -31,12 +31,12 @@
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Start time</label>
-                <input ng-model="$ctrl.lesson.start_time" type="time" required class="form-control"
+                <input ng-model="$ctrl.lesson.start_time" type=moment('"time"').toDate() required class="form-control"
                        placeholder="08:00">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>End time</label>
-                <input ng-model="$ctrl.lesson.end_time" type="time" required class="form-control"
+                <input ng-model="$ctrl.lesson.end_time" type=moment('"time"').toDate() required class="form-control"
                        placeholder="10:00">
             </md-input-container>
             <md-input-container class="md-block">

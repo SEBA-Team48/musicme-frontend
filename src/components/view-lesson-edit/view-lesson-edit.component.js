@@ -50,7 +50,7 @@ class ViewLessonEditComponentController{
     delete() {
         let _id = this.lesson['_id'];
 
-        this.LessonsService.delete(_id).then(response => {
+        this.LessonsService.delete(_id).then(responce => {
             this.$state.go('lessons',{});
         });
     };
