@@ -25,7 +25,7 @@ class ViewLessonComponent {
 class ViewLessonComponentController{
     constructor($state,LessonService,UserService){
         this.$state = $state;
-        this.LessonService = LessonService;
+        this.LessonService = LessonService; //s missing?
         this.UserService = UserService;
 
     }
