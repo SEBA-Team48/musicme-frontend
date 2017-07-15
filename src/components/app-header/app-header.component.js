@@ -30,6 +30,10 @@ class AppHeaderComponentController{
         this.$state.go('profile',{});
     }
 
+    goUpgrade(){
+        this.$state.go('upgrade',{});
+    }
+
     openMenu($mdMenu, ev) {
         $mdMenu.open(ev);
     }
