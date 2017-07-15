@@ -2,10 +2,10 @@
     <div class='md-padding' layout="row" layout-wrap layout-align="center center">
         <md-card flex="100">
             <img ng-src={{$ctrl.getSearchBannerURL()}} class="md-card-image" alt="Banner Image">
-            <div style=" position: absolute; top: 5%; left: 5%; width: 80%;">
-                <h1>Welcome to MusicMe!</h1>
+            <div style="position: absolute; top: 5%; left: 5%; width: 80%;  font-size: 2vmin;">
+                <h3>Welcome to MusicMe!</h3>
                 <p>This is a platform to help people interested in music to find each other, whether you want to teach someone an instrument
-                    <br>or if you are want to learn an instrument, we are going to help you find each other easily. </p>
+                <br>or if you are want to learn an instrument, we are going to help you find each other easily. </p>
                 <p>Below you can try the search function to see if you can find something you are looking for.</p>
             </div>
             <md-card-title>
@@ -17,14 +17,15 @@
                 <md-input-container class="md-icon-float md-block">
                     <label>Lesson</label>
                     <md-icon><ng-md-icon icon="search"></ng-md-icon></md-icon>
-                    <input ng-model="searchBox" type="text">
+                    <input ng-model="query" type="text" ng-change="searchResult=false">
                 </md-input-container>
+                <md-button aria-label="Search Lesson" ng-click="searchQuery=query;lessonsToFilter= $ctrl.lessons;searchResult=true">Search</md-button>
             </md-card-content>
         </md-card>
     </div>
 
-    <div class='md-padding' layout="row" layout-wrap layout-align="center start">
-        <md-card flex="30" ng-repeat="lesson in $ctrl.lessons | filter:searchBox">
+    <div class='md-padding' layout="row" layout-wrap layout-align="center start" ng-show="searchResult && query">
+        <md-card flex="30" ng-repeat="lesson in lessonsToFilter | filter: searchQuery">
             <img ng-src="{{$ctrl.getLessonDisplayImageURL()}}" class="md-card-image" alt="Lesson Image">
             <md-card-title>
                 <md-card-title-text>

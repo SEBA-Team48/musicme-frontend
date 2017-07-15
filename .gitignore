@@ -45,4 +45,6 @@ jspm_packages
 .DS_Store
 
 # Distribution files
-dist/
+dist/*
+!dist/music-lesson-Stock-Photo.jpg
+!dist/musical-instruments.jpg
