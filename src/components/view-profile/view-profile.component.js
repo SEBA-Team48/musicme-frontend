@@ -10,7 +10,9 @@ class ViewProfileComponent {
     constructor(){
         this.controller = ViewProfileComponentController;
         this.template = template;
-
+        this.bindings = {
+            user: '<',
+        }
     }
 
     static get name() {
@@ -25,24 +27,21 @@ class ViewProfileComponentController {
         this.$state = $state;
         this.UserService = UserService;
     }
+
     getCurrentUser(){
-        let user = this.UserService.getCurrentUser();
-        return user.username;
+        return this.user.username;
     }
 
     getFirstName(){
-        let user = this.UserService.getCurrentUser();
-        return user.fname;
+        return this.user.fname;
     }
 
     getLastName(){
-        let user = this.UserService.getCurrentUser();
-        return user.lname;
+        return this.user.lname;
     }
 
     getEmail(){
-        let user = this.UserService.getCurrentUser();
-        return user.emailadress;
+        return this.user.emailadress;
     }
 
     

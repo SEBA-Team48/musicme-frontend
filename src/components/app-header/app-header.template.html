@@ -7,6 +7,13 @@
         <span flex="30"></span>
         <div layout="row" layout-align="end">
             <span flex></span>
+            <md-menu-item ng-if="$ctrl.isAuthenticated()">
+                <md-button ng-click="$ctrl.goUpgrade()">
+                    <md-icon md-menu-align-target><ng-md-icon icon="backup" ></ng-md-icon></md-icon>
+                    Upgrade
+                </md-button>
+            </md-menu-item>
+
         <md-menu-item ng-if="$ctrl.isAuthenticated()">
             <md-button ng-click="$ctrl.seeProfile()">
                 <md-icon md-menu-align-target><ng-md-icon icon="account_circle" ></ng-md-icon></md-icon>
