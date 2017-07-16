@@ -39,7 +39,6 @@ import ViewProfile from './components/view-profile/view-profile';
 import ViewProfileEdit from './components/view-profile-edit/view-profile-edit';
 
 
-
 let app = angular.module('app', [
     uiRouter,
     angularMaterial,
