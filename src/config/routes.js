@@ -8,10 +8,6 @@ import LoginComponent from './../components/view-login/view-login.component';
 import LandingPageComponent from './../components/view-landing-page/view-landing-page.component';
 import RegistrationComponent from './../components/view-registration/view-registration.component';
 import ImpressumComponent from './../components/view-impressum/view-impressum.component';
-import TeacherComponent from './../components/view-teacher/view-teacher.component';
-import TeachersComponent from './../components/view-teachers/view-teachers.component';
-import TeacherEditComponent from './../components/view-teacher-edit/view-teacher-edit.component';
-import TeacherCreateComponent from './../components/view-teacher-create/view-teacher-create.component';
 import MessageComponent from './../components/view-message/view-message.component';
 import MessagesComponent from './../components/view-messages/view-messages.component';
 import RatingComponent from './../components/view-rating/view-rating.component';
@@ -22,7 +18,6 @@ import UpgradeComponent from './../components/view-upgrade/view-upgrade.componen
 
 import UserService from './../services/user/user.service';
 import LessonsService from './../services/lessons/lessons.service';
-import TeachersService from './../services/teachers/teachers.service';
 import MessagesService from './../services/messages/messages.service';
 
 
@@ -41,15 +36,6 @@ function resolveLessons(lessonsService){
     return lessonsService.list();
 }
 
-resolveTeacher.$inject = ['$stateParams', TeachersService.name];
-function resolveTeacher($stateParams, teachersService){
-    return teachersService.get($stateParams.teacherId);
-}
-
-resolveTeachers.$inject = [TeachersService.name];
-function resolveTeachers(teachersService){
-    return teachersService.list();
-}
 
 resolveMessage.$inject = ['$stateParams', MessagesService.name];
 function resolveMessage($stateParams, messagesService){
@@ -94,31 +80,6 @@ export default function config ($stateProvider, $urlRouterProvider){
                 lesson : resolveLesson
             }
         })
-        .state('teachers', {
-            url: '/teachers',
-            component: TeachersComponent.name,
-            resolve: {
-                teachers : resolveTeachers
-            }
-        })
-        .state('teacherAdd', {
-            url: '/teachers/new',
-            component: TeacherCreateComponent.name
-        })
-        .state('teacher', {
-            url: '/teachers/:teacherId',
-            component: TeacherComponent.name,
-            resolve: {
-                teacher : resolveTeacher
-            }
-        })
-        .state('teacherEdit', {
-            url: '/teachers/:teacherId/edit',
-            component: TeacherEditComponent.name,
-            resolve: {
-                teacher : resolveTeacher
-            }
-        })
         .state('landingPage', {
             url: '/landing',
             component: LandingPageComponent.name,
@@ -140,8 +101,6 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/impressum',
             component: ImpressumComponent.name,
         })
-
-
         .state('messages', {
             url: '/messages',
             component: MessagesComponent.name,
