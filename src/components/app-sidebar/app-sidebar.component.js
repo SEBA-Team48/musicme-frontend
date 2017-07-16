@@ -27,9 +27,6 @@ class AppSidebarComponent {
     }
 
 
-        redirectEditProfile(){
-            this.$state.go('teachers')
-        }
 
         redirectYourInbox(){
             this.$state.go('messages',{})
@@ -41,10 +38,6 @@ class AppSidebarComponent {
 
         redirectSearchATeacher(){
              this.$state.go('landingPage',{})
-        }
-
-        redirectRateATeacher(){
-             this.$state.go('rating',{})
         }
 
         redirectCancelALesson(){

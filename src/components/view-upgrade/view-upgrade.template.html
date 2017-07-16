@@ -2,16 +2,16 @@
     <md-card flex="100">
         <md-card-content>
             <form name="UpgradeForm">
-                <h1>Become a Teacher</h1>
+                <h1>Become a teacher</h1>
                 <md-input-container class="md-block">
-                    <label>Choose your Subscrption</label>
+                    <label>Choose your subscription</label>
                     <md-select name="rate"  ng-model="$ctrl.model.is_teacher" required>
-                        <md-option value="1">$4.99 for 1 Month</md-option>
-                        <md-option value="2">$11.99 for 3 Month</md-option>
+                        <md-option value="1">$4.99 for 1 months</md-option>
+                        <md-option value="2">$11.99 for 3 months</md-option>
                         <md-option value="3">$39.99 for the entire year</md-option>
                     </md-select>
                     <div ng-messages="UpgradeForm.select.$error" role="alert" multiple="">
-                        <div ng-message="required">Select on Option</div>
+                        <div ng-message="required">Select an option</div>
                     </div>
                 </md-input-container>
                 <p>Enter your credit card information</p>
