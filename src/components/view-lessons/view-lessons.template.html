@@ -19,8 +19,8 @@
                                             <th>Cancel/Delete</th>
                                             <th>Details</th>
                                         </tr>
-
-                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons">
++
+                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter: $ctrl.user._id">
                                             <td>{{ lesson.title }}</td>
                                             <td>{{ lesson.start_day }}</td>
                                             <td>{{ lesson.start_time }}</td>

@@ -12,6 +12,7 @@ class ViewLessonsComponent {
         this.template = template;
         this.bindings = {
             lessons: '<',
+            user: '<'
         }
     }
 

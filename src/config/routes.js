@@ -70,7 +70,8 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/lessons',
             component: LessonsComponent.name,
             resolve: {
-                lessons : resolveLessons
+                lessons : resolveLessons,
+                user : resolveUser
             }
         })
         .state('lessonAdd', {
