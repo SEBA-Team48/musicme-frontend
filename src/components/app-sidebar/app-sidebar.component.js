@@ -25,6 +25,8 @@ class AppSidebarComponent {
         this.UserService = UserService;
 
     }
+
+
         redirectEditProfile(){
             this.$state.go('teachers')
         }
