@@ -1,0 +1,31 @@
+<md-content class="md-warm md-hue-3" layout="row" layout-wrap layout-align="center start">
+    <md-card flex="100">
+        <md-card-content>
+            <form name="UpgradeForm">
+                <h1>Become a Teacher</h1>
+                <md-input-container class="md-block">
+                    <label>Choose your Subscrption</label>
+                    <md-select name="rate"  ng-model="$ctrl.model.is_teacher" required>
+                        <md-option value="1">$4.99 for 1 Month</md-option>
+                        <md-option value="2">$11.99 for 3 Month</md-option>
+                        <md-option value="3">$39.99 for the entire year</md-option>
+                    </md-select>
+                </md-input-container>
+                <p>Enter your credit card information</p>
+                <md-input-container class="md-block" required>
+                    <label>Name</label>
+                    <input type="text"  name="name" required/>
+                </md-input-container>
+                <md-input-container class="md-block" required>
+                    <label>Number</label>
+                    <input type="text"  name="cardumber" placeholder="xxxx-xxxx-xxxx-xxxx" ng-minlength="19" ng-maxlength="19" required/>
+                </md-input-container>
+                <md-input-container class="md-block" required>
+                    <label>CVV</label>
+                    <input type="text"  name="cardumber" ng-minlength="3" ng-maxlength="3" required/>
+                </md-input-container>
+                <md-button ng-disabled="!UpgradeForm.$valid" class="md-raised"  ng-click="$ctrl.upgrade()">Upgrade</md-button>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

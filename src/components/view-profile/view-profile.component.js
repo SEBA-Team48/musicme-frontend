@@ -10,7 +10,9 @@ class ViewProfileComponent {
     constructor(){
         this.controller = ViewProfileComponentController;
         this.template = template;
-
+        this.bindings = {
+            user: '<',
+        }
     }
 
     static get name() {
@@ -25,25 +27,49 @@ class ViewProfileComponentController {
         this.$state = $state;
         this.UserService = UserService;
     }
+
     getCurrentUser(){
-        let user = this.UserService.getCurrentUser();
-        return user.username;
+        return this.user.username;
     }
 
-    getFirstName(){
-        let user = this.UserService.getCurrentUser();
-        return user.fname;
+    editProfile(){
+        this.$state.go('profileEdit',{});
     }
 
-    getLastName(){
-        let user = this.UserService.getCurrentUser();
-        return user.lname;
+    getRating(){
+        var count = 0;
+        var average = 0;
+        if(this.user.rating.length == 0){
+            return 'No Ratings';
+        }else{
+        for(var i=0; i < this.user.rating.length ; i++){
+            average += this.user.rating[i];
+            count++;
+        }
+        var avg = average/count;
+        return avg.toFixed(2);
+        }
     }
 
-    getEmail(){
-        let user = this.UserService.getCurrentUser();
-        return user.emailadress;
+    checkStatus(){
+        if(this.user.is_teacher != true){
+            return 'Student';
+        } else {return 'Teacher';}
     }
+
+    /*
+    showComments(){
+        if(this.user.comment.length == 0){
+            return 'No Comments';
+        }else {
+            var comments = "";
+            for (var i = 0; i < this.user.comment.length; i++) {
+                comments += this.user.comment[i] ;
+            }
+            return comments;
+        }
+    }*/
+
 
     
     static get $inject(){

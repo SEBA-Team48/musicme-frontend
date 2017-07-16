@@ -2,10 +2,21 @@
     <md-card flex="100">
         <md-card-content>
             <form name="ProfileForm">
-                <h1>{{$ctrl.getCurrentUser()}}'s Profile</h1>
-                <p>First name: {{$ctrl.getFirstName()}}</p>
-                <p>Last name: {{$ctrl.getLastName()}}</p>
-                <p>Emailadress: {{$ctrl.getEmail()}}</p>
+                <h1>{{$ctrl.user.username}}'s Profile</h1>
+                <p>First name: {{$ctrl.user.fname}}</p>
+                <p>Last name: {{$ctrl.user.lname}}</p>
+                <p>Emailadress: {{$ctrl.user.emailadress}}</p>
+                <P>Status: {{$ctrl.checkStatus()}}</P>
+                <p>Rating: {{$ctrl.getRating()}}&#9733</p>
+                <p>
+                    Comments on your courses:
+                    <ul style="list-style-type:square">
+                        <li ng-repeat = "comment in $ctrl.user.comment">{{comment}}</li>
+                    </ul>
+                </p>
+                
+                <md-button class="md-raised" ng-click="$ctrl.editProfile()">Edit Profile</md-button>
+
             </form>
         </md-card-content>
     </md-card>

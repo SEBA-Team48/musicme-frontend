@@ -3,13 +3,12 @@
 
 import UserService from './../../services/user/user.service';
 
-import template from './view-rating.template.html';
+import template from './view-upgrade.template.html';
 
-import './view-rating.style.css';
 
-class ViewRatingComponent {
+class ViewUpgradeComponent {
     constructor(){
-        this.controller = ViewRatingComponentController;
+        this.controller = ViewUpgradeComponentController;
         this.template = template;
         this.bindings = {
             user: '<',
@@ -18,43 +17,33 @@ class ViewRatingComponent {
     }
 
     static get name() {
-        return 'viewRating';
+        return 'viewUpgrade';
     }
 
 
 }
 
-class ViewRatingComponentController {
+class ViewUpgradeComponentController {
     constructor($state,UserService){
         this.model = {};
         this.$state = $state;
         this.UserService = UserService;
-    }
 
-    cancel() {
-        this.$state.go('landingPage',{});
-    };
+    }
 
     $onInit() {
-        this.model = JSON.parse(JSON.stringify(this.user));
-        this.comment = "";
-        this.rating = "";
+        this.model = JSON.parse(JSON.stringify(this.user))
     }
-
-    save() {
+    upgrade() {
         let _id = this.user['_id'];
-
-        this.model["rating"].push(this.rating);
-        this.model["comment"].push(this.comment);
-
+        this.model.is_teacher = true;
         this.UserService.updateUserDetails(this.model).then(data => {
             this.user = JSON.parse(JSON.stringify(data));
 
-            this.$state.go('landingPage',{});
+            this.$state.go('profile',{});
         });
 
     };
-
 
 
     static get $inject(){
@@ -64,4 +53,4 @@ class ViewRatingComponentController {
 }
 
 
-export default ViewRatingComponent;
+export default ViewUpgradeComponent;

@@ -34,6 +34,7 @@ class ViewMessagesComponentController{
         }
 
     details (message) {
+        //TODO : update the unread Boolean value
         let _id = message['_id'];
         this.$state.go('message',{ messageId:_id});
     };

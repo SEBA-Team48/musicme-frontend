@@ -10,6 +10,9 @@ class AppHeaderComponent {
     constructor(){
         this.controller = AppHeaderComponentController;
         this.template = template;
+        this.bindings = {
+            user: '<',
+        }
 
     }
 
@@ -30,6 +33,10 @@ class AppHeaderComponentController{
         this.$state.go('profile',{});
     }
 
+    goUpgrade(){
+        this.$state.go('upgrade',{});
+    }
+
     openMenu($mdMenu, ev) {
         $mdMenu.open(ev);
     }
@@ -37,6 +44,7 @@ class AppHeaderComponentController{
     isAuthenticated(){
         return this.UserService.isAuthenticated();
     }
+
 
     getCurrentUser(){
         let user = this.UserService.getCurrentUser();
