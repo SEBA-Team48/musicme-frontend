@@ -90,10 +90,9 @@ class ViewLessonComponentController{
             this.LessonService.update(this.lesson).then(data => {
                 this.lesson = JSON.parse(JSON.stringify(data));
             });
-            let user = this.UserService.getCurrentUser();
             this.message = {};
             this.message['sender'] = user['_id'];
-            this.message['receiver'] = lesson['user'];
+            this.message['receiver'] = this.lesson['user'];
             this.message['subject'] = "Lesson Booked";
             this.message['content'] = "Dear Teacher, \n We are inform that you have a new lesson booking.";
             var today = new Date();
@@ -101,7 +100,7 @@ class ViewLessonComponentController{
             this.MessageService.create(this.message).then( data => {
                 let _id = data['_id'];
             });
-            this.$state.go('landing',{});
+            this.$state.go('lessons',{});
         } else {
             this.$state.go('lessons',{});
         }
