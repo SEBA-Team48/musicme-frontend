@@ -2,9 +2,11 @@
 'use strict';
 
 import template from './view-lessons.template.html';
+import './view-lessons.style.css';
 import LessonsService from './../../services/lessons/lessons.service';
 import UserService from './../../services/user/user.service';
 import DateService from'./../../services/date/date.service';
+
 
 class ViewLessonsComponent {
     constructor(){
