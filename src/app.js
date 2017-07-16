@@ -9,7 +9,6 @@ import 'angular-material/angular-material.css';
 
 import ngMdIcons from 'angular-material-icons';
 import LessonsService from './services/lessons/lessons';
-import TeachersService from './services/teachers/teachers';
 import UserService from './services/user/user';
 import DateService from './services/date/date';
 import MessagesService from './services/messages/messages';
@@ -26,10 +25,6 @@ import ViewLogin from './components/view-login/view-login';
 import ViewLandingPage from './components/view-landing-page/view-landing-page';
 import ViewRegistration from './components/view-registration/view-registration';
 import ViewImpressum from './components/view-impressum/view-impressum';
-import ViewTeacher from './components/view-teacher/view-teacher';
-import ViewTeachers from './components/view-teachers/view-teachers';
-import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
-import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
 import ViewMessages from './components/view-messages/view-messages';
 
 import ViewUpgrade from './components/view-upgrade/view-upgrade';
@@ -46,7 +41,6 @@ let app = angular.module('app', [
     ngMdIcons,
     UserService.name,
     LessonsService.name,
-    TeachersService.name,
     MessagesService.name,
     DateService.name,
     AppContent.name,
@@ -58,10 +52,6 @@ let app = angular.module('app', [
     ViewLandingPage.name,
 	ViewRegistration.name,
     ViewImpressum.name,
-    ViewTeacher.name,
-    ViewTeachers.name,
-    ViewTeacherCreate.name,
-    ViewTeacherEdit.name,
     ViewMessages.name,
     ViewRating.name,
     ViewProfile.name,
