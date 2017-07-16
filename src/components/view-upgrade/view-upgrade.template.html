@@ -7,7 +7,7 @@
                 <p>$4.99 for 1 Month</p>
                 <p>$11.99 for 3 Month</p>
                 <p>$39.99 for the entire year</p>
-                <md-button class="md-raised" ng-click="$ctrl.seeProfile()">Upgrade</md-button>
+                <md-button class="md-raised" ng-model="$ctrl.model.is_teacher" value="true" ng-click="$ctrl.upgrade()">Upgrade</md-button>
             </form>
         </md-card-content>
     </md-card>

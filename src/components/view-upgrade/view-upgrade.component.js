@@ -10,6 +10,9 @@ class ViewUpgradeComponent {
     constructor(){
         this.controller = ViewUpgradeComponentController;
         this.template = template;
+        this.bindings = {
+            user: '<',
+        }
 
     }
 
@@ -22,20 +25,25 @@ class ViewUpgradeComponent {
 
 class ViewUpgradeComponentController {
     constructor($state,UserService){
+        this.model = {};
         this.$state = $state;
         this.UserService = UserService;
+
     }
 
-    seeProfile(){
-        // setting currentUser status to 1
-        console.log('test');
-        this.$state.go('profile',{});
+    $onInit() {
+        this.model = JSON.parse(JSON.stringify(this.user))
     }
+    upgrade() {
+        let _id = this.user['_id'];
+        this.model.is_teacher = true;
+        this.UserService.updateUserDetails(this.model).then(data => {
+            this.user = JSON.parse(JSON.stringify(data));
 
-    getCurrentUser(){
-        let user = this.UserService.getCurrentUser();
-        return user.username;
-    }
+            this.$state.go('profile',{});
+        });
+
+    };
 
 
     static get $inject(){

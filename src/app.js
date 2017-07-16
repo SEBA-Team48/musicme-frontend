@@ -29,9 +29,11 @@ import ViewTeachers from './components/view-teachers/view-teachers';
 import ViewTeacherEdit from './components/view-teacher-edit/view-teacher-edit';
 import ViewTeacherCreate from './components/view-teacher-create/view-teacher-create';
 import ViewMessages from './components/view-messages/view-messages';
+import ViewUpgrade from './components/view-upgrade/view-upgrade';
 
 import ViewRating from './components/view-rating/view-rating';
 import ViewProfile from './components/view-profile/view-profile';
+import ViewProfileEdit from './components/view-profile-edit/view-profile-edit';
 
 
 let app = angular.module('app', [
@@ -57,7 +59,9 @@ let app = angular.module('app', [
     ViewTeacherEdit.name,
     ViewMessages.name,
     ViewRating.name,
-    ViewProfile.name
+    ViewProfile.name,
+    ViewProfileEdit.name,
+    ViewUpgrade.name
 
 ]);
 
