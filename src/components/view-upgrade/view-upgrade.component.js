@@ -39,10 +39,9 @@ class ViewUpgradeComponentController {
         this.model.is_teacher = true;
         this.UserService.updateUserDetails(this.model).then(data => {
             this.user = JSON.parse(JSON.stringify(data));
-
+            
             this.$state.go('profile',{});
         });
-
     };
 
 

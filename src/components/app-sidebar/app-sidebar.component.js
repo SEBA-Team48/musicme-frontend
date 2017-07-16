@@ -10,7 +10,6 @@ class AppSidebarComponent {
     constructor() {
         this.controller = AppSidebarComponentController;
         this.template = template;
-
     }
 
     static get name() {
@@ -25,8 +24,10 @@ class AppSidebarComponent {
         this.UserService = UserService;
 
     }
-
-
+        returnIsTeacher(){
+            let teacher_details = this.UserService.getCurrentUser();
+            return teacher_details['is_teacher'];
+        }
 
         redirectYourInbox(){
             this.$state.go('messages',{})

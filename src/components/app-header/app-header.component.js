@@ -77,6 +77,11 @@ class AppHeaderComponentController{
         return ['$state', UserService.name];
     }
 
+    returnIsTeacher(){
+        let teacher_details = this.UserService.getCurrentUser();
+        return teacher_details['is_teacher'];
+    }
+
 }
 
 

@@ -111,7 +111,10 @@ class ViewLessonsComponentController{
         return this.DateService.returnDateFormat(date);
     }
 
-
+    returnIsTeacher(){
+        let teacher_details = this.UserService.getCurrentUser();
+        return teacher_details['is_teacher'];
+    }
 
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name, DateService.name];
