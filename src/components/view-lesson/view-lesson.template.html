@@ -5,31 +5,22 @@
                 <md-card-title>
                     <md-card-title-text>
                         <md-card-acations layout="row" layout-align="end center">
-                            <md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit()">
-                                <md-icon>
-                                    <ng-md-icon icon="mode_edit"></ng-md-icon>
-                                </md-icon>
-                            </md-button>
 
-                            <md-button class="md-icon-button" aria-label="Delete Item" ng-click="$ctrl.delete()">
-                                <md-icon>
-                                    <ng-md-icon icon="delete"></ng-md-icon>
-                                </md-icon>
-                            </md-button>
                         </md-card-acations>
 
-                        <span class="md-headline">{{$ctrl.lesson.title}}</span>
-                        <span class="md-subhead">{{$ctrl.lesson.instrument_list}}</span>
+                        <span class="md-headline"><b> Lesson title:</b> {{$ctrl.lesson.title}}</span>
+
 
                     </md-card-title-text>
 
                 </md-card-title>
 
                 <md-card-content>
-                    <p>{{$ctrl.lesson.start_day}}</p>
-                    <p>{{$ctrl.lesson.start_time}}</p>
-                    <p>{{$ctrl.lesson.end_time}}</p>
-                    <p>{{$ctrl.lesson.frequency}}</p>
+                    <p> <b>List of instruments:</b> {{$ctrl.lesson.instrument_list}}</p>
+                    <p> <b>Start day:</b> {{$ctrl.lesson.start_day}}</p>
+                    <p> <b>Start time:</b> {{$ctrl.lesson.start_time}}</p>
+                    <p> <b>End time:</b> {{$ctrl.lesson.end_time}}</p>
+                    <p> <b>Frequency:</b> {{$ctrl.lesson.frequency}}</p>
                 </md-card-content>
 
 

@@ -18,6 +18,7 @@
                                             <th>Edit lesson</th>
                                             <th>Cancel/Delete</th>
                                             <th>Details</th>
+                                            <th>Book</th>
                                         </tr>
 
                                         <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter: $ctrl.user._id">
@@ -34,8 +35,10 @@
                                                 <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
                                             </md-button></td>
                                             <td><md-button ng-click="$ctrl.details(lesson)">
-                                                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+                                                <md-icon><ng-md-icon icon="menu"></ng-md-icon></md-icon>
                                             </md-button></td>
+                                            <td><md-button class="md-raised" >Book
+                                            </md-button></td></td>
                                         </tr>
                                     </table>
                                 </form>
@@ -52,7 +55,10 @@
                     <md-icon>
                         <ng-md-icon icon="help"></ng-md-icon>
                     </md-icon>
-                </md-button>
+                </div>
+
+
+            </div>
             </div>
 </div>
 </div>
