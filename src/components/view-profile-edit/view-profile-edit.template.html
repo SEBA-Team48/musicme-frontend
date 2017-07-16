@@ -13,7 +13,10 @@
                 </md-input-container>
                 <md-input-container class="md-block" >
                     <label>New EmailAddress</label>
-                    <input type="email"   name="comment" ng-model="$ctrl.model.emailadress" required/>
+                    <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$"  name="comment" ng-model="$ctrl.model.emailadress" required/>
+                    <div ng-messages="RegistrationForm.emailadress.$error" role="alert" multiple="">
+                        <div ng-message="required">Please enter your E-mail address. Only upper- & lowercase + "._%+-" are allowed</div>
+                    </div>
                 </md-input-container>
                 <div layout="row">
                     <span flex></span>

@@ -25,19 +25,17 @@
                     <md-option value="saxophone">Saxophone</md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container md-datepicker ng-model="$ctrl.model.start_day" type=moment('"time"').toDate() required class="md-icon-float md-block">
+            <md-input-container md-datepicker ng-model="$ctrl.model.start_day" required class="md-icon-float md-block">
                 <label>Date</label>
                 <md-datepicker ng-model="$ctrl.model.start_day" required></md-datepicker>
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Start time</label>
-                <input ng-model="$ctrl.model.start_time" type=moment('"time"').toDate() required class="form-control"
-                       placeholder="08:00">
+                <input ng-model="$ctrl.model.start_time" type=moment('"time"').toDate() required class="form-control">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>End time</label>
-                <input ng-model="$ctrl.model.end_time" type=moment('"time"').toDate() required class="form-control"
-                       placeholder="10:00">
+                <input ng-model="$ctrl.model.end_time" type=moment('"time"').toDate() required class="form-control">
             </md-input-container>
             <md-input-container class="md-block">
                 <label>Session frequency</label>

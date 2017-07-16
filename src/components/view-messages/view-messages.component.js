@@ -4,7 +4,7 @@
 import template from './view-messages.template.html';
 import MessagesService from './../../services/messages/messages.service';
 import UserService from './../../services/user/user.service';
-
+import DateService from'./../../services/date/date.service';
 
 class ViewMessagesComponent {
     constructor(){
@@ -21,10 +21,11 @@ class ViewMessagesComponent {
 }
 
 class ViewMessagesComponentController{
-    constructor($state,MessagesService,UserService){
+    constructor($state,MessagesService,UserService,DateService){
         this.$state = $state;
         this.MessagesService = MessagesService;
         this.UserService = UserService;
+        this.DateService = DateService;
         /*User.findOne({
             where: {id: req.params.id}
         }).then(function(user) {
@@ -55,9 +56,14 @@ class ViewMessagesComponentController{
         }
     };
 
+    returnDay(date){
+        var day =  new Date(date);
+        return this.DateService.returnDateFormat(date);
+    }
+
 
     static get $inject(){
-        return ['$state', MessagesService.name, UserService.name];
+        return ['$state', MessagesService.name, UserService.name,DateService.name];
     }
 
 
