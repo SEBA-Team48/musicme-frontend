@@ -6,6 +6,7 @@ import './view-lessons.style.css';
 import LessonsService from './../../services/lessons/lessons.service';
 import UserService from './../../services/user/user.service';
 import DateService from'./../../services/date/date.service';
+import MessageService from './../../services/messages/messages.service';
 
 
 class ViewLessonsComponent {
@@ -25,11 +26,12 @@ class ViewLessonsComponent {
 
 class ViewLessonsComponentController{
 
-    constructor($state,LessonsService,UserService,DateService){
+    constructor($state,LessonsService,UserService,DateService,MessageService){
         this.$state = $state;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
         this.DateService = DateService;
+        this.MessageService = MessageService;
     }
 
 
@@ -76,6 +78,17 @@ class ViewLessonsComponentController{
             this.LessonsService.update(lesson).then(data => {
                 this.lesson = JSON.parse(JSON.stringify(data));
             });
+            let user = this.UserService.getCurrentUser();
+            this.message = {};
+            this.message['sender'] = user['_id'];
+            this.message['receiver'] = lesson['user'];
+            this.message['subject'] = "Lesson Cancelled";
+            this.message['content'] = "Dear Teacher, \n We are sorry to inform that your lesson was cancelled.";
+            var today = new Date();
+            this.message['time'] = today;
+            this.MessageService.create(this.message).then( data => {
+                let _id = data['_id'];
+            });
             this.$state.go('lessons',{});
         } else {
             this.$state.go('lessons',{});
@@ -117,11 +130,8 @@ class ViewLessonsComponentController{
     }
 
     static get $inject(){
-        return ['$state', LessonsService.name, UserService.name, DateService.name];
+        return ['$state', LessonsService.name, UserService.name, DateService.name, MessageService.name];
     }
-
-
-
 }
 
 export default ViewLessonsComponent;
