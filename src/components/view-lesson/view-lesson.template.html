@@ -1,27 +1,26 @@
-<div class="container" layout="row" layout-align="center" flex>
-    <div layout="column" layout-padding>
-        <md-content class="md-no-momentum">
-            <md-card>
-                <md-card-title>
-                    <md-card-title-text>
-                        <md-card-acations layout="row" layout-align="end center">
-                        </md-card-acations>
-                        <span class="md-headline"><b> Lesson title:</b> {{$ctrl.lesson.title}}</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <p> <b>List of instruments:</b>
-                        <ul style="list-style-type:square">
-                            <li ng-repeat = "lesson in $ctrl.lesson.instrument_list">{{lesson}}</li>
-                         </ul>
-                    </p>
-                    <p> <b>Start day:</b> {{$ctrl.returnDay($ctrl.lesson.start_day)}}</p>
-                    <p> <b>Start time:</b> {{$ctrl.lesson.start_time}}</p>
-                    <p> <b>End time:</b> {{$ctrl.lesson.end_time}}</p>
-                    <p> <b>Frequency:</b> {{$ctrl.lesson.frequency}}</p>
-                </md-card-content>
-            </md-card>
-            </form>
-        </md-content>
+<md-content layout-padding ng-cloak>
+    <div class='md-padding' layout="row" layout-wrap layout-align="center center">
+
+        <md-card flex="100">
+            <md-card-title>
+                <md-card-title-text>
+                    <md-card-acations layout="row" layout-align="end center">
+                    </md-card-acations>
+                    <span class="md-headline"><b> Lesson title:</b> {{$ctrl.lesson.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p> <b>List of instruments:</b>
+                    <ul style="list-style-type:square">
+                        <li ng-repeat="lesson in $ctrl.lesson.instrument_list">{{lesson}}</li>
+                    </ul>
+                </p>
+                <p> <b>Start day:</b> {{$ctrl.returnDay($ctrl.lesson.start_day)}}</p>
+                <p> <b>Start time:</b> {{$ctrl.lesson.start_time}}</p>
+                <p> <b>End time:</b> {{$ctrl.lesson.end_time}}</p>
+                <p> <b>Frequency:</b> {{$ctrl.lesson.frequency}}</p>
+            </md-card-content>
+        </md-card>
+        </form>
     </div>
-</div>
+</md-content>
