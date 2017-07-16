@@ -39,6 +39,8 @@ class ViewLessonCreateComponentController{
         this.lesson['start_day']=this.lesson.start_day;
         console.log(this.lesson['start_day']);
         */
+        this.lesson['is_booked']= false;
+        this.lesson['user_student'] = null;
         this.lesson['user'] = user['_id'];
         //this.lesson['user_student'] = user['_id'];
         this.LessonsService.create(this.lesson).then(data => {

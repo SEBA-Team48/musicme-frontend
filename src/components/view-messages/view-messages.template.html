@@ -3,38 +3,36 @@
         <md-content class="md-warm md-hue-3">
             <md-content class="md-padding">
                 <div layout="column" layout-padding>
-
                     <h3>Here, you can see your mails.</h3>
                     <br>
-
                     <table class="table table-bordered">
                         <tr>
                             <th>Date</th>
                             <th>Sender</th>
                             <th>Subject</th>
                             <th>Read</th>
+                            <th></th>
                         </tr>
-
                         <tr ng-repeat="message in $ctrl.messages">
-
                             <td>{{$ctrl.returnDay(message.time)}}</td>
-                            <td>{{ message.sender }}</td>
+                            <td>{{ $ctrl.returnName(message.sender)}}</td>
                             <td>{{ message.subject }}</td>
                             <td> <!-- display icon depending if msg read, .. code improvement needed actually -->
-                                <md-button class="md-icon-button" ng-click="$ctrl.details(message)">
                                     <md-menu-item ng-if="message.unread">
+                                        <md-button class="md-icon-button" ng-click="$ctrl.details(message)">
                                         <md-icon>
                                             <ng-md-icon icon="mail"></ng-md-icon>
                                         </md-icon>
+                                        </md-button>
                                     </md-menu-item>
                                     <md-menu-item ng-if="!message.unread">
+                                        <md-button class="md-icon-button" ng-click="$ctrl.details(message)">
                                         <md-icon>
                                             <ng-md-icon icon="drafts"></ng-md-icon>
                                         </md-icon>
+                                        </md-button>
                                     </md-menu-item>
-                                </md-button>
                             </td>
-
                             <td>
                                 <md-button class="md-icon-button" aria-label="Delete message"
                                            ng-click="$ctrl.delete(message)">
@@ -43,7 +41,6 @@
                                     </md-icon>
                                 </md-button>
                             </td>
-
                         </tr>
                     </table>
                 </div>

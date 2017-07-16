@@ -35,8 +35,13 @@ class ViewMessagesComponentController{
         }
 
     details (message) {
-        //TODO : update the unread Boolean value
         let _id = message['_id'];
+        if(message.unread){
+            message['unread']= false;
+        }
+        this.MessagesService.update(message).then(data => {
+            this.message = JSON.parse(JSON.stringify(data));
+        });
         this.$state.go('message',{ messageId:_id});
     };
 
@@ -59,6 +64,11 @@ class ViewMessagesComponentController{
     returnDay(date){
         var day =  new Date(date);
         return this.DateService.returnDateFormat(date);
+    }
+
+    returnName(id){
+        let user_data = this.UserService.getUserDetailsByID(id);
+        return user_data.fname + " " + user_data.lname;
     }
 
 

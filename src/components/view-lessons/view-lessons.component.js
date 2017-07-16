@@ -83,9 +83,14 @@ class ViewLessonsComponentController{
     };
 
     rate(lesson){
-        let _id = this.lesson['_id'];
+        if (this.UserService.isAuthenticated()) {
+            let user_id = lesson['user'];
+            console.log(user_id);
+            this.$state.go('rating',{userId: user_id});
+        } else {
+            this.$state.go('login',{});
+        }
     }
-
 
     delete(lesson) {
         if (this.UserService.isAuthenticated()) {
@@ -102,20 +107,7 @@ class ViewLessonsComponentController{
     };
 
     returnDay(date){
-        //console.log("date:"+ date );
        var day =  new Date(date);
-       /*
-        console.log("day: "+ day);
-        console.log("table: \n" +
-            "1: "+ day.toDateString()+ "\n"+
-            "2: "+ day.getYear() +"\n"+
-            "3: "+ day.getFullYear()+ "\n"+
-            "4: "+ day.getDate() +"\n"+
-            "5: "+ day.getDay() +"\n"+
-        "3: "+ day.getUTCDay()+ "\n"+
-        "4: "+ day.getUTCDate() +"\n");
-*/
-        //console.log("joined method"+ day);
         return this.DateService.returnDateFormat(date);
     }
 

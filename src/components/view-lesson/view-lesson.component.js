@@ -49,7 +49,7 @@ class ViewLessonComponentController{
         if (this.UserService.isAuthenticated()) {
             let _id = this.lesson['_id'];
 
-            this.LessonsService.delete(_id).then(response => {
+            this.LessonService.delete(_id).then(response => {
                 this.$state.go('lessons',{});
             });
         } else {
@@ -61,7 +61,7 @@ class ViewLessonComponentController{
         if (this.UserService.isAuthenticated()) {
             let _id = this.lesson['_id'];
 
-            this.LessonsService.delete(_id).then(response => {
+            this.LessonService.delete(_id).then(response => {
                 this.$state.go('lessons',{});
             });
         } else {
@@ -81,10 +81,16 @@ class ViewLessonComponentController{
 
 
     book() {
-        if(this.UserService.isAuthenticated()) {
-            let _id = this.lesson['_id'];
-
-            this.$state.go('lessons', {});
+        if (this.UserService.isAuthenticated()) {
+            let user = this.UserService.getCurrentUser();
+            this.lesson['is_booked']= true;
+            this.lesson['user_student'] = user['_id'];
+            this.LessonService.update(this.lesson).then(data => {
+                this.lesson = JSON.parse(JSON.stringify(data));
+            });
+            this.$state.go('lessons',{});
+        } else {
+            this.$state.go('lessons',{});
         }
     };
 
