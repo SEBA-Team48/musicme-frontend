@@ -21,12 +21,15 @@ class ViewLessonsComponent {
 }
 
 class ViewLessonsComponentController{
-    constructor($state,LessonsService,UserService){
+    constructor($state,LessonsService,UserService,$window){
         this.$state = $state;
+        this.$window = $window;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
 
+
     }
+
 
     details (lesson) {
         let _id = lesson['_id'];

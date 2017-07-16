@@ -6,6 +6,7 @@ import uiRouter from '@uirouter/angularjs';
 import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 
+
 import ngMdIcons from 'angular-material-icons';
 import LessonsService from './services/lessons/lessons';
 import TeachersService from './services/teachers/teachers';
@@ -32,6 +33,7 @@ import ViewMessages from './components/view-messages/view-messages';
 
 import ViewRating from './components/view-rating/view-rating';
 import ViewProfile from './components/view-profile/view-profile';
+
 
 
 let app = angular.module('app', [
