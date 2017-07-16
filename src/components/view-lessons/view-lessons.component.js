@@ -71,7 +71,12 @@ class ViewLessonsComponentController{
 
         if (this.UserService.isAuthenticated()) {
             let _id = lesson['_id'];
-            this.$state.go('lessonCancel',{});
+            lesson['is_booked']= false;
+            lesson['user_student']=null;
+            this.LessonsService.update(lesson).then(data => {
+                this.lesson = JSON.parse(JSON.stringify(data));
+            });
+            this.$state.go('lessons',{});
         } else {
             this.$state.go('lessons',{});
         }
