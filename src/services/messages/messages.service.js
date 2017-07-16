@@ -65,5 +65,14 @@ export default class MessagesService {
         })
     }
 
+    update(message) {
+        let url = `${ this.resourceUrl }${ message['_id'] }`;
+        return this.$http.put(url,message).then(responce => {
+            return new Promise((resolve, reject) => {
+                resolve(responce.data);
+            });
+        })
+    }
+
 
 }
