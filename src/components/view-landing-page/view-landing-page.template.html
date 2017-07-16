@@ -19,7 +19,7 @@
                     <md-icon><ng-md-icon icon="search"></ng-md-icon></md-icon>
                     <input ng-model="query" type="text" ng-change="searchResult=false">
                 </md-input-container>
-                <md-button aria-label="Search Lesson" ng-click="searchQuery=query;lessonsToFilter= $ctrl.lessons;searchResult=true">Search</md-button>
+                <md-button class="md-raised" aria-label="Search Lesson" ng-click="searchQuery=query;lessonsToFilter= $ctrl.lessons;searchResult=true">Search</md-button>
             </md-card-content>
         </md-card>
     </div>

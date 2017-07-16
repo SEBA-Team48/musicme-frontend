@@ -12,6 +12,7 @@ class ViewLessonsComponent {
         this.template = template;
         this.bindings = {
             lessons: '<',
+            user: '<'
         }
     }
 
@@ -21,12 +22,15 @@ class ViewLessonsComponent {
 }
 
 class ViewLessonsComponentController{
-    constructor($state,LessonsService,UserService,DateService){
+
+    constructor($state,LessonsService,UserService,DateService,$window){
         this.$state = $state;
+        this.$window = $window;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
         this.DateService = DateService;
     }
+
 
     details (lesson) {
         let _id = lesson['_id'];

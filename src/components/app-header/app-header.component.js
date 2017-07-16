@@ -10,6 +10,9 @@ class AppHeaderComponent {
     constructor(){
         this.controller = AppHeaderComponentController;
         this.template = template;
+        this.bindings = {
+            user: '<',
+        }
 
     }
 
@@ -41,6 +44,7 @@ class AppHeaderComponentController{
     isAuthenticated(){
         return this.UserService.isAuthenticated();
     }
+
 
     getCurrentUser(){
         let user = this.UserService.getCurrentUser();

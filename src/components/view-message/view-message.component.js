@@ -44,7 +44,7 @@ class ViewMessageComponentController{
         }
     };
 
-    
+
     returnDay(date){
         var day =  new Date(date);
         return this.DateService.returnDateFormat(date);

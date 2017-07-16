@@ -16,6 +16,8 @@ import MessageComponent from './../components/view-message/view-message.componen
 import MessagesComponent from './../components/view-messages/view-messages.component';
 import RatingComponent from './../components/view-rating/view-rating.component';
 import ProfileComponent from './../components/view-profile/view-profile.component';
+import ProfileEditComponent from './../components/view-profile-edit/view-profile-edit.component';
+import UpgradeComponent from './../components/view-upgrade/view-upgrade.component';
 
 
 import UserService from './../services/user/user.service';
@@ -70,7 +72,8 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/lessons',
             component: LessonsComponent.name,
             resolve: {
-                lessons : resolveLessons
+                lessons : resolveLessons,
+                user : resolveUser
             }
         })
         .state('lessonAdd', {
@@ -157,11 +160,30 @@ export default function config ($stateProvider, $urlRouterProvider){
         .state('rating',{
             url: '/rating',
             component: RatingComponent.name,
+            resolve: {
+                user : resolveUser
+            }
         })
 
         .state('profile',{
             url: '/profile',
             component: ProfileComponent.name,
+            resolve: {
+                user : resolveUser
+            }
+        })
+
+        .state('profileEdit',{
+            url: '/profileEdit',
+            component: ProfileEditComponent.name,
+            resolve: {
+                user : resolveUser
+            }
+        })
+
+        .state('upgrade',{
+            url: '/upgrade',
+            component: UpgradeComponent.name,
             resolve: {
                 user : resolveUser
             }
