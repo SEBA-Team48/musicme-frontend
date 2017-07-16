@@ -36,11 +36,16 @@ class ViewRatingComponentController {
     };
 
     $onInit() {
-        this.model = JSON.parse(JSON.stringify(this.user))
+        this.model = JSON.parse(JSON.stringify(this.user));
+        this.comment = "";
+        this.rating = "";
     }
 
     save() {
         let _id = this.user['_id'];
+
+        this.model["rating"].push(this.rating);
+        this.model["comment"].push(this.comment);
 
         this.UserService.updateUserDetails(this.model).then(data => {
             this.user = JSON.parse(JSON.stringify(data));

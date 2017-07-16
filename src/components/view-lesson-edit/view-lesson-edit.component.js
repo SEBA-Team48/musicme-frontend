@@ -26,6 +26,7 @@ class ViewLessonEditComponentController{
         this.LessonsService = LessonsService;
     }
 
+
     $onInit() {
         //Clone the Music Data
         this.model = JSON.parse(JSON.stringify(this.lesson))

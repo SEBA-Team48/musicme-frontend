@@ -8,7 +8,13 @@
                 <p>Emailadress: {{$ctrl.user.emailadress}}</p>
                 <P>Status: {{$ctrl.checkStatus()}}</P>
                 <p>Rating: {{$ctrl.getRating()}}&#9733</p>
-                <P>Comment: {{$ctrl.showComments()}}</P>
+                <p>
+                    Comments on your courses:
+                    <ul style="list-style-type:square">
+                        <li ng-repeat = "comment in $ctrl.user.comment">{{comment}}</li>
+                    </ul>
+                </p>
+                
                 <md-button class="md-raised" ng-click="$ctrl.editProfile()">Edit Profile</md-button>
 
             </form>

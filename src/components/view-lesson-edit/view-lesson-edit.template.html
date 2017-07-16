@@ -25,7 +25,7 @@
                     <md-option value="saxophone">Saxophone</md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container md-datepicker ng-model="$ctrl.model.start_day" placeholder="Start day" required class="md-icon-float md-block">
+            <md-input-container md-datepicker ng-model="$ctrl.model.start_day" type=moment('"time"').toDate() required class="md-icon-float md-block">
                 <label>Date</label>
                 <md-datepicker ng-model="$ctrl.model.start_day" required></md-datepicker>
             </md-input-container>
