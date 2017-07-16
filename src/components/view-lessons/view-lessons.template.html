@@ -21,7 +21,7 @@
                                             <th>Book</th>
                                         </tr>
 
-                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter: $ctrl.user._id">
+                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter:{user_student:$ctrl.user._id}">
                                             <td>{{ lesson.title }}</td>
                                             <td>{{$ctrl.returnDay( lesson.start_day )}}</td>
                                             <td>{{ lesson.start_time }}</td>
