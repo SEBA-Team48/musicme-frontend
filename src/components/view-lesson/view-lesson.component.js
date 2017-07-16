@@ -57,11 +57,36 @@ class ViewLessonComponentController{
         }
     };
 
+    cancelLesson() {
+        if (this.UserService.isAuthenticated()) {
+            let _id = this.lesson['_id'];
+
+            this.LessonsService.delete(_id).then(response => {
+                this.$state.go('lessons',{});
+            });
+        } else {
+            this.$state.go('login',{});
+        }
+    };
+
+
+    cancel() {
+        this.$state.go('lessons',{});
+    };
+
     returnDay(date){
         var day =  new Date(date);
         return this.DateService.returnDateFormat(date);
     }
 
+
+    book() {
+        if(this.UserService.isAuthenticated()) {
+            let _id = this.lesson['_id'];
+
+            this.$state.go('lessons', {});
+        }
+    };
 
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name, DateService.name];

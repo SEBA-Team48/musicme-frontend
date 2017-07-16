@@ -1,6 +1,59 @@
 <div class="container" layout="row" layout-align="center" flex="100">
     <div ng-cloak>
         <md-content class="md-warm md-hue-3">
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Booked Lessons">
+                    <md-content class="md-padding">
+                        <div layout="column" layout-padding>
+                            <md-content class="md-no-momentum">
+                                <h3>Here you can see all your booked lessons</h3>
+                                <br>
+                                <form name="bookedlessonForm">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Start day</th>
+                                            <th>Start time</th>
+                                            <th>End time</th>
+                                            <th>Instrument list</th>
+                                            <th>Frequency</th>
+                                            <th>Cancel</th>
+                                            <th>Rate Teacher</th>
+                                            <th>Details</th>
+
+                                        </tr>
+
+                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter:{user_student:$ctrl.user._id}">
+                                            <td>{{ lesson.title }}</td>
+                                            <td>{{$ctrl.returnDay( lesson.start_day )}}</td>
+                                            <td>{{ lesson.start_time }}</td>
+                                            <td>{{ lesson.end_time }}</td>
+                                            <td>
+                                                <ul style="list-style-type:square">
+                                                    <li ng-repeat = "lesson in lesson.instrument_list">{{lesson}}</li>
+                                                </ul>
+                                            </td>
+                                            <td>{{ lesson.frequency }}</td>
+
+                                            <td><md-button class="md-icon-button" aria-label="Cancel lesson" ng-click="$ctrl.cancel(lesson)" >
+                                                <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
+                                            </md-button></td>
+                                            <td><md-button class="md-icon-button" aria-label="Rate Teacher" ng-click="$ctrl.rate(lesson)" >
+                                                <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
+                                            </md-button></td>
+                                            <td><md-button ng-click="$ctrl.details(lesson)">
+                                                <md-icon><ng-md-icon icon="menu"></ng-md-icon></md-icon>
+                                            </md-button></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </md-content>
+
+                        </div>
+            </md-content>
+
+                </md-tab>
+                <md-tab label="Created Lessons">
                     <md-content class="md-padding">
                         <div layout="column" layout-padding>
                             <md-content class="md-no-momentum">
@@ -18,7 +71,6 @@
                                             <th>Edit lesson</th>
                                             <th>Cancel/Delete</th>
                                             <th>Details</th>
-                                            <th>Book</th>
                                         </tr>
 
                                         <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter:{user:$ctrl.user._id}">
@@ -41,29 +93,27 @@
                                             <td><md-button ng-click="$ctrl.details(lesson)">
                                                 <md-icon><ng-md-icon icon="menu"></ng-md-icon></md-icon>
                                             </md-button></td>
-                                            <td><md-button class="md-raised" ng-click="$ctrl.book(lesson)">
-                                                Book
-                                            </md-button></td>
                                         </tr>
                                     </table>
                                 </form>
                             </md-content>
 
                         </div>
-            </md-content>
+                    </md-content>
 
-            <div layout="row">
-                <span flex></span>
-                <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
-                <md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
-                <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" title="On this page, you can create a new lesson and see the list of your lessons.">
-                    <md-icon>
-                        <ng-md-icon icon="help"></ng-md-icon>
-                    </md-icon>
-                </div>
-
+                    <div layout="row">
+                        <span flex></span>
+                        <md-button class="md-raised" ng-click="$ctrl.cancel()">Cancel</md-button>
+                        <md-button class="md-raised" ng-click="$ctrl.newLesson()">Add New time slot</md-button>
+                        <md-button ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" title="On this page, you can create a new lesson and see the list of your lessons.">
+                            <md-icon>
+                                <ng-md-icon icon="help"></ng-md-icon>
+                            </md-icon>
+                    </div>
+                </md-tab>
+            </md-tabs>
 
             </div>
             </div>
-</div>
-</div>
+
+
