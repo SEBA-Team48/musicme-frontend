@@ -33,8 +33,17 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>{{lesson.year}}</p>
-                <p>{{lesson.synopsis}}</p>
+                <p> <b>Teacher:</b> {{$ctrl.returnName(lesson.user)}}</p>
+                <p> <b>List of instruments:</b>
+                    <ul style="list-style-type:square">
+                        <li ng-repeat="instrument in lesson.instrument_list">{{instrument}}</li>
+                    </ul>
+                </p>
+                <p> <b>Start day:</b> {{$ctrl.returnDay(lesson.start_day)}}</p>
+                <p> <b>Start time:</b> {{lesson.start_time}}</p>
+                <p> <b>End time:</b> {{lesson.end_time}}</p>
+                <p> <b>Frequency:</b> {{lesson.frequency}}</p>
+                <p> <b>Teacher Rating:</b> {{$ctrl.returnRating(lesson.user)}}</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button aria-label="Contact Lesson" ng-click="$ctrl.contact(lesson)">Contact</md-button>

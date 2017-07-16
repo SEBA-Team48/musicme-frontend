@@ -4,6 +4,7 @@
 import template from './view-landing-page.template.html';
 import LessonsService from './../../services/lessons/lessons.service';
 import UserService from './../../services/user/user.service';
+import DateService from'./../../services/date/date.service';
 
 
 class ViewLandingPageComponent {
@@ -23,10 +24,11 @@ class ViewLandingPageComponent {
 }
 
 class ViewLandingPageComponentController{
-    constructor($state,LessonsService,UserService){
+    constructor($state,LessonsService,UserService,DateService){
         this.$state = $state;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
+        this.DateService = DateService;
     }
 
     contact(lesson) {
@@ -38,10 +40,34 @@ class ViewLandingPageComponentController{
         }
     };
 
-    search() {
-        $scope.searchQuery = $scope.query;
-        $scope.lessonsToFilter= $ctrl.lessons;
-        $scope.searchResult=true;
+    returnDay(date){
+       var day =  new Date(date);
+        return this.DateService.returnDateFormat(date);
+    }
+
+    calculateRating(user){
+        var count = 0;
+        var average = 0;
+        if(user.rating.length == 0){
+            return 'No Ratings';
+        }else{
+        for(var i=0; i < user.rating.length ; i++){
+            average += user.rating[i];
+            count++;
+        }
+        var avg = average/count;
+        return avg.toFixed(2);
+        }
+    }
+
+    returnRating(id){
+        let user_data = this.UserService.getUserDetailsByID(id);
+        return this.calculateRating(user_data);
+    }
+
+    returnName(id){
+        let user_data = this.UserService.getUserDetailsByID(id);
+        return user_data.fname + " " + user_data.lname;
     }
 
     getSearchBannerURL(){
@@ -55,7 +81,7 @@ class ViewLandingPageComponentController{
     }
 
     static get $inject(){
-        return ['$state', LessonsService.name, UserService.name];
+        return ['$state', LessonsService.name, UserService.name, DateService.name];
     }
 
 }

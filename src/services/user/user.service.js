@@ -68,6 +68,19 @@ export default class UserService {
         })
     }
 
+    jsonreq(yourUrl){
+        var Httpreq = new XMLHttpRequest(); // a new request
+        Httpreq.open("GET",yourUrl,false);
+        Httpreq.send(null);
+        return Httpreq.responseText;          
+    }
+
+    getUserDetailsByID(id) {
+        let url = `${ this.resourceUrl }${ id }`;
+        var json_obj = JSON.parse(this.jsonreq(url));
+        return json_obj;
+    }
+
     updateUserDetails(user) {
         let url = `${ this.resourceUrl }${ user['_id'] }`;
         return this.$http.put(url,user).then(responce => {
