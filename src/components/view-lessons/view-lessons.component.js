@@ -89,7 +89,7 @@ class ViewLessonsComponentController{
             this.MessageService.create(this.message).then( data => {
                 let _id = data['_id'];
             });
-            this.$state.go('lessons',{});
+            this.$state.go('landing',{});
         } else {
             this.$state.go('lessons',{});
         }
@@ -113,6 +113,17 @@ class ViewLessonsComponentController{
                 let index = this.lessons.map(x => x['_id']).indexOf(_id);
                 this.lessons.splice(index, 1);
             })
+            let user = this.UserService.getCurrentUser();
+            this.message = {};
+            this.message['sender'] = user['_id'];
+            this.message['receiver'] = lesson['user_student'];
+            this.message['subject'] = "Lesson Deleted";
+            this.message['content'] = "Dear Student, \n We are sorry to inform that your lesson was removed.";
+            var today = new Date();
+            this.message['time'] = today;
+            this.MessageService.create(this.message).then( data => {
+                let _id = data['_id'];
+            });
 
         } else {
             this.$state.go('login',{});
