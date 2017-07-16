@@ -48,3 +48,4 @@ jspm_packages
 dist/*
 !dist/music-lesson-Stock-Photo.jpg
 !dist/musical-instruments.jpg
+!dist/musicme.png
