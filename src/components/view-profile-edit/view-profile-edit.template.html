@@ -4,15 +4,15 @@
             <form name="ProfileForm">
                 <h1>Update your Information</h1>
                 <md-input-container class="md-block" >
-                    <label>New First Name</label>
+                    <label>New first name</label>
                     <input type="text"  name="comment" ng-model="$ctrl.model.fname" required/>
                 </md-input-container>
                 <md-input-container class="md-block" >
-                    <label>New Last Name</label>
+                    <label>New last name</label>
                     <input type="text"  name="comment" ng-model="$ctrl.model.lname" required/>
                 </md-input-container>
                 <md-input-container class="md-block" >
-                    <label>New EmailAddress</label>
+                    <label>New email address</label>
                     <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$"  name="comment" ng-model="$ctrl.model.emailadress" required/>
                     <div ng-messages="RegistrationForm.emailadress.$error" role="alert" multiple="">
                         <div ng-message="required">Please enter your E-mail address. Only upper- & lowercase + "._%+-" are allowed</div>
