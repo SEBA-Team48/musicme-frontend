@@ -26,6 +26,11 @@ function resolveLesson($stateParams,lessonsService){
     return lessonsService.get($stateParams.lessonId);
 }
 
+resolveUserID.$inject = ['$stateParams', UserService.name];
+function resolveUserID($stateParams, userService){
+    return userService.getUserDetailsByID($stateParams.userId);
+}
+
 resolveUser.$inject = [UserService.name];
 function resolveUser(userService){
     return userService.getUserDetails();
@@ -117,10 +122,10 @@ export default function config ($stateProvider, $urlRouterProvider){
         })
 
         .state('rating',{
-            url: '/rating',
+            url: '/rating/:userId',
             component: RatingComponent.name,
             resolve: {
-                user : resolveUser
+                user : resolveUserID
             }
         })
 

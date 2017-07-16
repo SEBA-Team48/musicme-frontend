@@ -83,9 +83,14 @@ class ViewLessonsComponentController{
     };
 
     rate(lesson){
-        let _id = this.lesson['_id'];
+        if (this.UserService.isAuthenticated()) {
+            let user_id = lesson['user'];
+            console.log(user_id);
+            this.$state.go('rating',{userId: user_id});
+        } else {
+            this.$state.go('login',{});
+        }
     }
-
 
     delete(lesson) {
         if (this.UserService.isAuthenticated()) {
