@@ -4,6 +4,7 @@
 import template from './view-message.template.html';
 import MessagesService from './../../services/messages/messages.service';
 import UserService from './../../services/user/user.service';
+import DateService from'./../../services/date/date.service';
 
 class ViewMessageComponent {
     constructor(){
@@ -23,11 +24,11 @@ class ViewMessageComponent {
 }
 
 class ViewMessageComponentController{
-    constructor($state,MessageService,UserService){
+    constructor($state,MessageService,UserService,DateService){
         this.$state = $state;
         this.MessagesService = MessagesService;
         this.UserService = UserService;
-
+        this.DateService = DateService;
     }
 
 
@@ -43,10 +44,14 @@ class ViewMessageComponentController{
         }
     };
 
-
+    
+    returnDay(date){
+        var day =  new Date(date);
+        return this.DateService.returnDateFormat(date);
+    }
 
     static get $inject(){
-        return ['$state', MessagesService.name, UserService.name];
+        return ['$state', MessagesService.name, UserService.name,DateService.name];
     }
 
 }

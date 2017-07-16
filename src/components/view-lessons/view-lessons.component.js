@@ -4,7 +4,7 @@
 import template from './view-lessons.template.html';
 import LessonsService from './../../services/lessons/lessons.service';
 import UserService from './../../services/user/user.service';
-
+import DateService from'./../../services/date/date.service';
 
 class ViewLessonsComponent {
     constructor(){
@@ -21,11 +21,11 @@ class ViewLessonsComponent {
 }
 
 class ViewLessonsComponentController{
-    constructor($state,LessonsService,UserService){
+    constructor($state,LessonsService,UserService,DateService){
         this.$state = $state;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
-
+        this.DateService = DateService;
     }
 
     details (lesson) {
@@ -72,9 +72,28 @@ class ViewLessonsComponentController{
         }
     };
 
+    returnDay(date){
+        //console.log("date:"+ date );
+       var day =  new Date(date);
+       /*
+        console.log("day: "+ day);
+        console.log("table: \n" +
+            "1: "+ day.toDateString()+ "\n"+
+            "2: "+ day.getYear() +"\n"+
+            "3: "+ day.getFullYear()+ "\n"+
+            "4: "+ day.getDate() +"\n"+
+            "5: "+ day.getDay() +"\n"+
+        "3: "+ day.getUTCDay()+ "\n"+
+        "4: "+ day.getUTCDate() +"\n");
+*/
+        //console.log("joined method"+ day);
+        return this.DateService.returnDateFormat(date);
+    }
+
+
 
     static get $inject(){
-        return ['$state', LessonsService.name, UserService.name];
+        return ['$state', LessonsService.name, UserService.name, DateService.name];
     }
 
 

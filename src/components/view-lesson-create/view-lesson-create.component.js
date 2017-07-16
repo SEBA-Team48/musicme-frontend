@@ -6,6 +6,7 @@ import template from './view-lesson-create.template.html';
 import LessonsService from './../../services/lessons/lessons.service';
 import UserService from './../../services/user/user.service';
 
+
 class ViewLessonCreateComponent {
     constructor(){
         this.controller = ViewLessonCreateComponentController;
@@ -31,15 +32,23 @@ class ViewLessonCreateComponentController{
 
     save() {
         let user = this.UserService.getCurrentUser();
-
+        //var moment = require('moment');
+       // moment().format();
+      /*  this.lesson.start_day=moment(this.lesson.start_day).format("L");
+        console.log(this.lesson.start_day);
+        this.lesson['start_day']=this.lesson.start_day;
+        console.log(this.lesson['start_day']);
+        */
         this.lesson['user'] = user['_id'];
         this.LessonsService.create(this.lesson).then(data => {
             let _id = data['_id'];
             //this.$state.go('lesson',{ lessonId:_id});
+           // console.log(this.lesson);
             this.$state.go('lessons',{})
         });
 
     };
+
 
 
     help(){

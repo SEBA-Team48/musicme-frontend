@@ -22,7 +22,7 @@
 
                                         <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons">
                                             <td>{{ lesson.title }}</td>
-                                            <td>{{ lesson.start_day }}</td>
+                                            <td>{{$ctrl.returnDay( lesson.start_day )}}</td>
                                             <td>{{ lesson.start_time }}</td>
                                             <td>{{ lesson.end_time }}</td>
                                             <td>{{ lesson.instrument_list }}</td>

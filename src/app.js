@@ -6,10 +6,12 @@ import uiRouter from '@uirouter/angularjs';
 import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 
+
 import ngMdIcons from 'angular-material-icons';
 import LessonsService from './services/lessons/lessons';
 import TeachersService from './services/teachers/teachers';
 import UserService from './services/user/user';
+import DateService from './services/date/date';
 import MessagesService from './services/messages/messages';
 
 import Routes from './config/routes';
@@ -42,6 +44,7 @@ let app = angular.module('app', [
     LessonsService.name,
     TeachersService.name,
     MessagesService.name,
+    DateService.name,
     AppContent.name,
     ViewLessons.name,
     ViewLesson.name,
