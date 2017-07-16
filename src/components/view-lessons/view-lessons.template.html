@@ -21,12 +21,16 @@
                                             <th>Book</th>
                                         </tr>
 
-                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter: $ctrl.user._id">
+                                        <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter:{user_student:$ctrl.user._id}">
                                             <td>{{ lesson.title }}</td>
                                             <td>{{$ctrl.returnDay( lesson.start_day )}}</td>
                                             <td>{{ lesson.start_time }}</td>
                                             <td>{{ lesson.end_time }}</td>
-                                            <td>{{ lesson.instrument_list }}</td>
+                                            <td>
+                                                <ul style="list-style-type:square">
+                                                    <li ng-repeat = "lesson in lesson.instrument_list">{{lesson}}</li>
+                                                </ul>
+                                            </td>
                                             <td>{{ lesson.frequency }}</td>
                                             <td><md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
                                                 <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>

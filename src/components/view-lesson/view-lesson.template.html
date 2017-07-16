@@ -10,7 +10,11 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    <p> <b>List of instruments:</b> {{$ctrl.lesson.instrument_list}}</p>
+                    <p> <b>List of instruments:</b>
+                        <ul style="list-style-type:square">
+                            <li ng-repeat = "lesson in $ctrl.lesson.instrument_list">{{lesson}}</li>
+                         </ul>
+                    </p>
                     <p> <b>Start day:</b> {{$ctrl.returnDay($ctrl.lesson.start_day)}}</p>
                     <p> <b>Start time:</b> {{$ctrl.lesson.start_time}}</p>
                     <p> <b>End time:</b> {{$ctrl.lesson.end_time}}</p>

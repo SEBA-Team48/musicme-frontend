@@ -68,6 +68,11 @@ class AppHeaderComponentController{
         this.$state.go('register',{});
     }
 
+    getMusicMeLogo(){
+        let logo = './musicme.png';
+        return logo;
+    }
+
     static get $inject(){
         return ['$state', UserService.name];
     }

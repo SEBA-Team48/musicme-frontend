@@ -55,8 +55,7 @@ class AppSidebarComponent {
 
         getLessonDisplayImageURL(){
 
-            let lessonDisplayImageURL = 'https://previews.123rf.com/images/stockbroker/stockbroker1411/stockbroker141103891/33604544-Young-boy-playing-violin-in-music-lesson-Stock-Photo.jpg';
-
+            let lessonDisplayImageURL =  './music-lesson-Stock-Photo.jpg';
             return lessonDisplayImageURL;
         }
 
