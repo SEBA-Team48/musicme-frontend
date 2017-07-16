@@ -25,7 +25,7 @@
     </div>
 
     <div class='md-padding' layout="row" layout-wrap layout-align="center start" ng-show="searchResult && query">
-        <md-card flex="30" ng-repeat="lesson in lessonsToFilter | filter: searchQuery">
+        <md-card flex="30" ng-repeat="lesson in lessonsToFilter | filter: searchQuery | filter:{is_booked: false}">
             <img ng-src="{{$ctrl.getLessonDisplayImageURL()}}" class="md-card-image" alt="Lesson Image">
             <md-card-title>
                 <md-card-title-text>
