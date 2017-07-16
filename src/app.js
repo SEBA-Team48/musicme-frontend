@@ -69,7 +69,6 @@ let app = angular.module('app', [
     ViewUpgrade.name,
     ViewMessage.name
 
-
 ]);
 
 app.constant('API_URL', 'http://localhost:3000/api');

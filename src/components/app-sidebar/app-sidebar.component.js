@@ -46,7 +46,7 @@ class AppSidebarComponent {
         }
 
         redirectCancelALesson(){
-             this.$state.go('teachers',{})
+             this.$state.go('lessons',{})
         }
 
         redirectAddNewTimeSlot(){
