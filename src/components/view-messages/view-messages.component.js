@@ -66,6 +66,11 @@ class ViewMessagesComponentController{
         return this.DateService.returnDateFormat(date);
     }
 
+    returnName(id){
+        let user_data = this.UserService.getUserDetailsByID(id);
+        return user_data.fname + " " + user_data.lname;
+    }
+
 
     static get $inject(){
         return ['$state', MessagesService.name, UserService.name,DateService.name];
