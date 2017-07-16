@@ -25,9 +25,8 @@ class ViewLessonsComponent {
 
 class ViewLessonsComponentController{
 
-    constructor($state,LessonsService,UserService,DateService,$window){
+    constructor($state,LessonsService,UserService,DateService){
         this.$state = $state;
-        this.$window = $window;
         this.LessonsService = LessonsService;
         this.UserService = UserService;
         this.DateService = DateService;
@@ -44,6 +43,16 @@ class ViewLessonsComponentController{
         if (this.UserService.isAuthenticated()) {
             let _id = lesson['_id'];
             this.$state.go('lessonEdit',{ lessonId:_id});
+        } else {
+            this.$state.go('login',{});
+        }
+    };
+
+    book (lesson) {
+
+        if(this.UserService.isAuthenticated()) {
+            let _id = lesson['_id'];
+            this.$state.go('lesson', { lessonId:_id});
         } else {
             this.$state.go('login',{});
         }
