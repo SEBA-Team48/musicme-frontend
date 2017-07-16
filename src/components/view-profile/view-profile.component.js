@@ -32,17 +32,43 @@ class ViewProfileComponentController {
         return this.user.username;
     }
 
-    getFirstName(){
-        return this.user.fname;
+    editProfile(){
+        this.$state.go('profileEdit',{});
     }
 
-    getLastName(){
-        return this.user.lname;
+    getRating(){
+        var count = 0;
+        var average = 0;
+        if(this.user.rating.length == 0){
+            return 'No Ratings';
+        }else{
+        for(var i=0; i < this.user.rating.length ; i++){
+            average += this.user.rating[i];
+            count++;
+        }
+        var avg = average/count;
+        return avg.toFixed(2);
+        }
     }
 
-    getEmail(){
-        return this.user.emailadress;
+    checkStatus(){
+        if(this.user.is_teacher != true){
+            return 'Student';
+        } else {return 'Teacher';}
     }
+
+    showComments(){
+        if(this.user.comment.length == 0){
+            return 'No Comments';
+        }else {
+            var comments = null;
+            for (var i = 0; i < this.user.comment.length; i++) {
+                comments += this.user.comment[i] ;
+            }
+            return comments;
+        }
+    }
+
 
     
     static get $inject(){

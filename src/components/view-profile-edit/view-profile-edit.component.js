@@ -3,36 +3,35 @@
 
 import UserService from './../../services/user/user.service';
 
-import template from './view-rating.template.html';
+import template from './view-profile-edit.template.html';
 
-import './view-rating.style.css';
 
-class ViewRatingComponent {
+class ViewProfileEditComponent {
     constructor(){
-        this.controller = ViewRatingComponentController;
+        this.controller = ViewProfileEditComponentController;
         this.template = template;
         this.bindings = {
             user: '<',
         }
-
     }
 
     static get name() {
-        return 'viewRating';
+        return 'viewProfileEdit';
     }
 
 
 }
 
-class ViewRatingComponentController {
+class ViewProfileEditComponentController {
     constructor($state,UserService){
         this.model = {};
         this.$state = $state;
         this.UserService = UserService;
     }
 
+
     cancel() {
-        this.$state.go('landingPage',{});
+        this.$state.go('profile',{});
     };
 
     $onInit() {
@@ -45,13 +44,13 @@ class ViewRatingComponentController {
         this.UserService.updateUserDetails(this.model).then(data => {
             this.user = JSON.parse(JSON.stringify(data));
 
-            this.$state.go('landingPage',{});
+            this.$state.go('profile',{});
         });
 
     };
 
 
-
+    
     static get $inject(){
         return ['$state', UserService.name];
     }
@@ -59,4 +58,4 @@ class ViewRatingComponentController {
 }
 
 
-export default ViewRatingComponent;
+export default ViewProfileEditComponent;

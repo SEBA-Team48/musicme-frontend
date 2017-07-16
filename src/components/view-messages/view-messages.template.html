@@ -9,22 +9,42 @@
 
                     <table class="table table-bordered">
                         <tr>
+                            <th>Date</th>
                             <th>Sender</th>
                             <th>Subject</th>
-                            <th>Unread</th>
+                            <th>Read</th>
                         </tr>
-<!--
-                        <tr ng-repeat="teacher in $ctrl.teachers">
-                           <md-button ng-click="$ctrl.">
+
+                        <tr ng-repeat="message in $ctrl.messages">
+
+                            <td>{{message.time}}</td>
                             <td>{{ message.sender }}</td>
                             <td>{{ message.subject }}</td>
-                            <td>if({{ message.unread }}{ //To-do show unread symbol <md-icon><ng-md-icon icon="mail"></ng-md-icon> </md-icon>}else{//to-do show read symbol} <md-icon> </md-icon></td>
+                            <td> <!-- display icon depending if msg read, .. code improvement needed actually -->
+                                <md-button class="md-icon-button" ng-click="$ctrl.details(message)">
+                                    <md-menu-item ng-if="message.unread">
+                                        <md-icon>
+                                            <ng-md-icon icon="mail"></ng-md-icon>
+                                        </md-icon>
+                                    </md-menu-item>
+                                    <md-menu-item ng-if="!message.unread">
+                                        <md-icon>
+                                            <ng-md-icon icon="drafts"></ng-md-icon>
+                                        </md-icon>
+                                    </md-menu-item>
+                                </md-button>
+                            </td>
 
-                            <md-button class="md-icon-button"aria-label="Cancel lesson" ng-click="$ctrl.delete(teacher)" >
-                                                <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
-                                            </md-button>
+                            <td>
+                                <md-button class="md-icon-button" aria-label="Delete message"
+                                           ng-click="$ctrl.delete(message)">
+                                    <md-icon>
+                                        <ng-md-icon icon="cancel"></ng-md-icon>
+                                    </md-icon>
+                                </md-button>
+                            </td>
 
--->
+                        </tr>
                     </table>
                 </div>
     </div>

@@ -1,0 +1,29 @@
+<div class="container" layout="row" layout-align="center" flex>
+    <div layout="column" layout-padding>
+        <md-content class="md-no-momentum">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <md-card-acations layout="row" layout-align="end center">
+                            <md-card-content>
+                                <p>Date: {{$ctrl.message.time}}</p>
+                                <p>Sender: {{$ctrl.message.sender}}</p>
+                                <p>Subject: {{$ctrl.message.subject}}</p>
+                                <p>{{$ctrl.message.content}}</p>
+                            </md-card-content>
+
+                            <md-button class="md-icon-button" aria-label="Delete Item" ng-click="$ctrl.delete()">
+                                <md-icon>
+                                    <ng-md-icon icon="delete"></ng-md-icon>
+                                </md-icon>
+                            </md-button>
+                        </md-card-acations>
+
+                    </md-card-title-text>
+
+                </md-card-title>
+            </md-card>
+            </form>
+        </md-content>
+    </div>
+</div>

@@ -12,10 +12,12 @@ import TeacherComponent from './../components/view-teacher/view-teacher.componen
 import TeachersComponent from './../components/view-teachers/view-teachers.component';
 import TeacherEditComponent from './../components/view-teacher-edit/view-teacher-edit.component';
 import TeacherCreateComponent from './../components/view-teacher-create/view-teacher-create.component';
-
+import MessageComponent from './../components/view-message/view-message.component';
 import MessagesComponent from './../components/view-messages/view-messages.component';
 import RatingComponent from './../components/view-rating/view-rating.component';
 import ProfileComponent from './../components/view-profile/view-profile.component';
+import ProfileEditComponent from './../components/view-profile-edit/view-profile-edit.component';
+import UpgradeComponent from './../components/view-upgrade/view-upgrade.component';
 
 
 import UserService from './../services/user/user.service';
@@ -146,23 +148,42 @@ export default function config ($stateProvider, $urlRouterProvider){
             resolve: {
                 messages : resolveMessages
             }
-        })/*
+        })
         .state('message', {
             url: '/messages/:messageId',
             component: MessageComponent.name,
             resolve: {
                 message : resolveMessage
             }
-        })*/
+        })
 
         .state('rating',{
             url: '/rating',
             component: RatingComponent.name,
+            resolve: {
+                user : resolveUser
+            }
         })
 
         .state('profile',{
             url: '/profile',
             component: ProfileComponent.name,
+            resolve: {
+                user : resolveUser
+            }
+        })
+
+        .state('profileEdit',{
+            url: '/profileEdit',
+            component: ProfileEditComponent.name,
+            resolve: {
+                user : resolveUser
+            }
+        })
+
+        .state('upgrade',{
+            url: '/upgrade',
+            component: UpgradeComponent.name,
             resolve: {
                 user : resolveUser
             }
