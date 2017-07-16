@@ -11,7 +11,7 @@
                 </md-card-title>
                 <md-card-content>
                     <p> <b>List of instruments:</b> {{$ctrl.lesson.instrument_list}}</p>
-                    <p> <b>Start day:</b> {{$ctrl.lesson.start_day}}</p>
+                    <p> <b>Start day:</b> {{$ctrl.returnDay($ctrl.lesson.start_day)}}</p>
                     <p> <b>Start time:</b> {{$ctrl.lesson.start_time}}</p>
                     <p> <b>End time:</b> {{$ctrl.lesson.end_time}}</p>
                     <p> <b>Frequency:</b> {{$ctrl.lesson.frequency}}</p>
