@@ -63,6 +63,14 @@ class ViewLessonComponentController{
     }
 
 
+    book() {
+        if(this.UserService.isAuthenticated()) {
+            let _id = this.lesson['_id'];
+
+            this.$state.go('lessons', {});
+        }
+    };
+
     static get $inject(){
         return ['$state', LessonsService.name, UserService.name, DateService.name];
     }
