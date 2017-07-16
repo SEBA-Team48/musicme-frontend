@@ -84,6 +84,7 @@ class ViewLessonsComponentController{
             this.message['receiver'] = lesson['user'];
             this.message['subject'] = "Lesson Cancelled";
             this.message['content'] = "Dear Teacher, \n We are sorry to inform that your lesson was cancelled.";
+            this.message['unread']=true;
             var today = new Date();
             this.message['time'] = today;
             this.MessageService.create(this.message).then( data => {
