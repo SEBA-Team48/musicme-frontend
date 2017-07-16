@@ -49,7 +49,6 @@ class ViewLessonsComponentController{
     };
 
     book (lesson) {
-
         if(this.UserService.isAuthenticated()) {
             let _id = lesson['_id'];
             this.$state.go('lesson', { lessonId:_id});
