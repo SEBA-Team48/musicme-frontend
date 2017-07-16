@@ -13,7 +13,7 @@
                 </md-input-container>
                 <md-input-container class="md-block" >
                     <label>New EmailAddress</label>
-                    <input type="text"  name="comment" ng-model="$ctrl.model.emailadress" required/>
+                    <input type="email" pattern="[A-Za-z0-9]{1-50}[@][A-Za-z0-9]{1-20}[.][A-Za-z0-9]{1-5}"  name="comment" ng-model="$ctrl.model.emailadress" required/>
                 </md-input-container>
                 <div layout="row">
                     <span flex></span>

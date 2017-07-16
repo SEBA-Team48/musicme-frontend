@@ -10,19 +10,31 @@
                         <md-option value="2">$11.99 for 3 Month</md-option>
                         <md-option value="3">$39.99 for the entire year</md-option>
                     </md-select>
+                    <div ng-messages="UpgradeForm.select.$error" role="alert" multiple="">
+                        <div ng-message="required">Select on Option</div>
+                    </div>
                 </md-input-container>
                 <p>Enter your credit card information</p>
-                <md-input-container class="md-block" required>
+                <md-input-container class="md-block" >
                     <label>Name</label>
-                    <input type="text"  name="name" required/>
+                    <input ng-model="model" type="text"  name="name" required/>
+                    <div ng-messages="UpgradeForm.name.$error" role="alert" multiple="">
+                        <div ng-message="required">Name required!</div>
+                    </div>
                 </md-input-container>
-                <md-input-container class="md-block" required>
+                <md-input-container class="md-block" >
                     <label>Number</label>
-                    <input type="text"  name="cardumber" placeholder="xxxx-xxxx-xxxx-xxxx" ng-minlength="19" ng-maxlength="19" required/>
+                    <input type="text"  ng-model="model1" pattern="[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}"name="cardumber" placeholder="xxxx-xxxx-xxxx-xxxx" ng-minlength="19" ng-maxlength="19" required/>
+                    <div ng-messages="UpgradeForm.cardnumber.$error" role="alert" multiple="">
+                        <div ng-message="required">Please enter in correct form: 0000-1111-2222-3333</div>
+                    </div>
                 </md-input-container>
-                <md-input-container class="md-block" required>
+                <md-input-container class="md-block">
                     <label>CVV</label>
-                    <input type="text"  name="cardumber" ng-minlength="3" ng-maxlength="3" required/>
+                    <input type="text"  ng-model="model2"  pattern="[0-9]{3}" name="ccv" placeholder="xxx" ng-minlength="3" ng-maxlength="3" required/>
+                    <div ng-messages="UpgradeForm.ccv.$error" role="alert" multiple="">
+                        <div ng-message="required">Enter in form: 123</div>
+                    </div>
                 </md-input-container>
                 <md-button ng-disabled="!UpgradeForm.$valid" class="md-raised"  ng-click="$ctrl.upgrade()">Upgrade</md-button>
             </form>
