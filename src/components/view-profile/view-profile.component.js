@@ -57,17 +57,18 @@ class ViewProfileComponentController {
         } else {return 'Teacher';}
     }
 
+    /*
     showComments(){
         if(this.user.comment.length == 0){
             return 'No Comments';
         }else {
-            var comments = null;
+            var comments = "";
             for (var i = 0; i < this.user.comment.length; i++) {
                 comments += this.user.comment[i] ;
             }
             return comments;
         }
-    }
+    }*/
 
 
     
