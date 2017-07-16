@@ -19,7 +19,6 @@
                                             <th>Frequency</th>
                                             <th>Cancel</th>
                                             <th>Rate Teacher</th>
-                                            <th>Details</th>
 
                                         </tr>
 
@@ -40,9 +39,6 @@
                                             </md-button></td>
                                             <td><md-button class="md-icon-button" aria-label="Rate Teacher" ng-click="$ctrl.rate(lesson)" >
                                                 <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
-                                            </md-button></td>
-                                            <td><md-button ng-click="$ctrl.details(lesson)">
-                                                <md-icon><ng-md-icon icon="menu"></ng-md-icon></md-icon>
                                             </md-button></td>
                                         </tr>
                                     </table>
@@ -68,9 +64,9 @@
                                             <th>End time</th>
                                             <th>Instrument list</th>
                                             <th>Frequency</th>
+                                            <th>Booking Status</th>
                                             <th>Edit lesson</th>
-                                            <th>Cancel/Delete</th>
-                                            <th>Details</th>
+                                            <th>Delete</th>
                                         </tr>
 
                                         <tr aria-label="Lesson" class="no-right" ng-repeat = "lesson in $ctrl.lessons | filter:{user:$ctrl.user._id}">
@@ -84,14 +80,12 @@
                                                 </ul>
                                             </td>
                                             <td>{{ lesson.frequency }}</td>
+                                            <td>{{ lesson.is_booked }}</td>
                                             <td><md-button class="md-icon-button" aria-label="Edit Item" ng-click="$ctrl.edit(lesson)" >
                                                 <md-icon><ng-md-icon icon="mode_edit"></ng-md-icon></md-icon>
                                             </md-button></td>
                                             <td><md-button class="md-icon-button" aria-label="Cancel lesson" ng-click="$ctrl.delete(lesson)" >
                                                 <md-icon><ng-md-icon icon="cancel" ></ng-md-icon></md-icon>
-                                            </md-button></td>
-                                            <td><md-button ng-click="$ctrl.details(lesson)">
-                                                <md-icon><ng-md-icon icon="menu"></ng-md-icon></md-icon>
                                             </md-button></td>
                                         </tr>
                                     </table>
