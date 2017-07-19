@@ -101,6 +101,9 @@ class ViewLessonComponentController{
             this.MessageService.create(this.message).then( data => {
                 let _id = data['_id'];
             });
+
+            setTimeout(function() {}, 500);
+
             this.$state.go('lessons',{});
         } else {
             this.$state.go('lessons',{});

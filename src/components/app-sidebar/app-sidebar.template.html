@@ -17,7 +17,7 @@
             <md-list-item id ="bottomSize" class="sidebar-item" ng-click="$ctrl.redirectCancelALesson()"> Cancel a lesson
             </md-list-item>
         </md-list>
-        <md-card flex="100">
+        <md-card flex="100" ng-hide="$ctrl.returnIsTeacher()">
             <img ng-src="{{$ctrl.getLessonDisplayImageURL()}}" class="md-card-image" alt="Lesson Image">
         </md-card>
     </sidebar>

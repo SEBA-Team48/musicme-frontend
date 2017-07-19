@@ -13,7 +13,7 @@
                             <th>Read</th>
                             <th></th>
                         </tr>
-                        <tr ng-repeat="message in $ctrl.messages">
+                        <tr ng-repeat="message in $ctrl.messages | filter:{receiver: $ctrl.user._id}">
                             <td>{{$ctrl.returnDay(message.time)}}</td>
                             <td>{{ $ctrl.returnName(message.sender)}}</td>
                             <td>{{ message.subject }}</td>

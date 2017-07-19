@@ -110,14 +110,15 @@ export default function config ($stateProvider, $urlRouterProvider){
             url: '/messages',
             component: MessagesComponent.name,
             resolve: {
-                messages : resolveMessages
+                messages : resolveMessages,
+                user : resolveUser
             }
         })
         .state('message', {
             url: '/messages/:messageId',
             component: MessageComponent.name,
             resolve: {
-                message : resolveMessage
+                message : resolveMessage,
             }
         })
 

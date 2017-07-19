@@ -50,8 +50,7 @@ class AppSidebarComponent {
         }
 
         getLessonDisplayImageURL(){
-
-            let lessonDisplayImageURL =  './music-lesson-Stock-Photo.jpg';
+            let lessonDisplayImageURL =  './300x300.png';
             return lessonDisplayImageURL;
         }
 

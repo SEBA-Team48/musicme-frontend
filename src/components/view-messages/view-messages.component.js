@@ -12,6 +12,7 @@ class ViewMessagesComponent {
         this.template = template;
         this.bindings = {
             messages: '<',
+            user: '<'
         }
     }
 
@@ -26,11 +27,6 @@ class ViewMessagesComponentController{
         this.MessagesService = MessagesService;
         this.UserService = UserService;
         this.DateService = DateService;
-        /*User.findOne({
-            where: {id: req.params.id}
-        }).then(function(user) {
-            this.messages.find({_id: req.params.id, 'name': "test"});
-        });*/
 
         }
 
