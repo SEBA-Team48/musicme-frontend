@@ -102,7 +102,7 @@ class ViewLessonComponentController{
                 let _id = data['_id'];
             });
 
-            setTimeout(function() {}, 500);
+            setTimeout(function() {}, 1000);
 
             this.$state.go('lessons',{});
         } else {
