@@ -24,7 +24,7 @@ class ViewMessageComponent {
 }
 
 class ViewMessageComponentController{
-    constructor($state,MessageService,UserService,DateService){
+    constructor($state,MessagesService,UserService,DateService){
         this.$state = $state;
         this.MessagesService = MessagesService;
         this.UserService = UserService;
