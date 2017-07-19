@@ -34,6 +34,10 @@ class ViewLessonsComponentController{
         this.MessageService = MessageService;
     }
 
+    returnName(id){
+        let user_data = this.UserService.getUserDetailsByID(id);
+        return user_data.fname + " " + user_data.lname;
+    };
 
     details (lesson) {
         let _id = lesson['_id'];
