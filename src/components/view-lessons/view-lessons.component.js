@@ -87,7 +87,7 @@ class ViewLessonsComponentController{
             this.message['sender'] = user['_id'];
             this.message['receiver'] = lesson['user'];
             this.message['subject'] = "Lesson Cancelled";
-            this.message['content'] = "Dear Teacher, \n We are sorry to inform that your lesson was cancelled.";
+            this.message['content'] = "Dear Teacher, We are sorry to inform that your lesson was cancelled.";
             this.message['unread']=true;
             var today = new Date();
             this.message['time'] = today;
@@ -123,7 +123,7 @@ class ViewLessonsComponentController{
             this.message['sender'] = user['_id'];
             this.message['receiver'] = lesson['user_student'];
             this.message['subject'] = "Lesson Deleted";
-            this.message['content'] = "Dear Student, \n We are sorry to inform that your lesson was removed.";
+            this.message['content'] = "Dear Student, We are sorry to inform that your lesson was removed.";
             this.message['unread']=true;
             var today = new Date();
             this.message['time'] = today;

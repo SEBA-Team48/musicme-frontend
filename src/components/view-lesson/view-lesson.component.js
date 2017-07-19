@@ -94,7 +94,7 @@ class ViewLessonComponentController{
             this.message['sender'] = user['_id'];
             this.message['receiver'] = this.lesson['user'];
             this.message['subject'] = "Lesson Booked";
-            this.message['content'] = "Dear Teacher, \n We are inform that you have a new lesson booking.";
+            this.message['content'] = "Dear Teacher,  we want to inform you that your lessons was booked.";
             this.message['unread'] = true;
             var today = new Date();
             this.message['time'] = today;
