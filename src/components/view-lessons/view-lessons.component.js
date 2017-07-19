@@ -120,6 +120,7 @@ class ViewLessonsComponentController{
             this.message['receiver'] = lesson['user_student'];
             this.message['subject'] = "Lesson Deleted";
             this.message['content'] = "Dear Student, \n We are sorry to inform that your lesson was removed.";
+            this.message['unread']=true;
             var today = new Date();
             this.message['time'] = today;
             this.MessageService.create(this.message).then( data => {
