@@ -7,39 +7,52 @@
         <div layout="row" layout-align="end">
             <span flex></span>
             <md-menu-item ng-if="$ctrl.isAuthenticated()">
-                <md-button  ng-click="$ctrl.goUpgrade()" ng-hide="$ctrl.returnIsTeacher()">
-                    <md-icon md-menu-align-target><ng-md-icon icon="backup" ></ng-md-icon></md-icon>
+                <md-button ng-click="$ctrl.goUpgrade()" ng-hide="$ctrl.returnIsTeacher()">
+                    <md-icon md-menu-align-target>
+                        <ng-md-icon icon="backup"></ng-md-icon>
+                    </md-icon>
                     Upgrade
                 </md-button>
             </md-menu-item>
 
-        <md-menu-item ng-if="$ctrl.isAuthenticated()">
-            <md-button ng-click="$ctrl.seeProfile()">
-                <md-icon md-menu-align-target><ng-md-icon icon="account_circle" ></ng-md-icon></md-icon>
-                {{$ctrl.getCurrentUser()}}
-            </md-button>
-        </md-menu-item>
-        <md-menu-item ng-if="$ctrl.isAuthenticated()">
-            <md-button ng-click="$ctrl.logout($event)">
-                <md-icon md-menu-align-target><ng-md-icon icon="logout" ></ng-md-icon></md-icon>
-                Logout
-            </md-button>
-        </md-menu-item>
-        <md-menu-item ng-if="!$ctrl.isAuthenticated()">
-            <md-button ng-click="$ctrl.login($event)">
-                <md-icon md-menu-align-target><ng-md-icon icon="login" ></ng-md-icon></md-icon>
-                Login
-            </md-button>
-        </md-menu-item>
-        <md-menu-item ng-if="!$ctrl.isAuthenticated()">
-            <md-button ng-click="$ctrl.register($event)">
-                <md-icon md-menu-align-target><ng-md-icon icon="line_style" ></ng-md-icon></md-icon>
-                Register
-            </md-button>
-        </md-menu-item>
-    <md-menu-item>
-            <md-switch md-menu-align-target ng-model="showHints"> {{showHints ? "EN" : "DE"}}</md-switch>
-    </md-menu-item>
-            </div>
+            <md-menu-item ng-if="$ctrl.isAuthenticated()">
+                <md-button ng-click="$ctrl.seeProfile()">
+                    <md-icon md-menu-align-target>
+                        <ng-md-icon icon="account_circle"></ng-md-icon>
+                    </md-icon>
+                    {{$ctrl.getCurrentUser()}}
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="$ctrl.isAuthenticated()">
+                <md-button ng-click="$ctrl.logout($event)">
+                    <md-icon md-menu-align-target>
+                        <ng-md-icon icon="logout"></ng-md-icon>
+                    </md-icon>
+                    Logout
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="!$ctrl.isAuthenticated()">
+                <md-button ng-click="$ctrl.login($event)">
+                    <md-icon md-menu-align-target>
+                        <ng-md-icon icon="login"></ng-md-icon>
+                    </md-icon>
+                    Login
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="!$ctrl.isAuthenticated()">
+                <md-button ng-click="$ctrl.register($event)">
+                    <md-icon md-menu-align-target>
+                        <ng-md-icon icon="line_style"></ng-md-icon>
+                    </md-icon>
+                    Register
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button style="text-align:center"  ng-click="toggle = !toggle">
+                    <span ng-show="toggle">EN</span>
+                    <span ng-hide="toggle">DE</span>
+                </md-button>
+            </md-menu-item>
+        </div>
     </div>
 </md-toolbar>
