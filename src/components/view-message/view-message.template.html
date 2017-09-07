@@ -7,9 +7,9 @@
                         <md-card-acations layout="row" layout-align="end center">
                             <md-card-content>
                                 <p>Date: {{$ctrl.returnDay($ctrl.message.time)}}</p>
-                                <p>Sender: {{ $ctrl.returnName(message.sender)}}</p>
+                                <p>Sender: {{ $ctrl.returnName($ctrl.message.sender)}}</p>
                                 <p>Subject: {{$ctrl.message.subject}}</p>
-                                <p>{{$ctrl.message.content}}</p>
+                                <p>{{$ctrl.messageContent($ctrl.message.content)}}</p>
                             </md-card-content>
 
                             <md-button class="md-icon-button" aria-label="Delete Item" ng-click="$ctrl.delete()">

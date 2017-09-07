@@ -54,6 +54,11 @@ class ViewMessageComponentController{
         let user_data = this.UserService.getUserDetailsByID(id);
         return user_data.fname + " " + user_data.lname;
     }
+    messageContent(s){
+        var newS = s.replace(/\n/g, "<br />");
+       // return $("div").html(newS);
+        return newS;
+    }
 
     static get $inject(){
         return ['$state', MessagesService.name, UserService.name,DateService.name];
